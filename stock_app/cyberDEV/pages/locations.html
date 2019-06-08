@@ -1,0 +1,50 @@
+<psco_head>
+        var map;
+        var marker = [];
+        function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 32.2237738, lng: 49.1808466},
+        zoom: 6
+        });
+        }
+        initMap();
+
+
+        function test_sync(data){
+        console.log(data);
+
+    for(index=0 ; index < data.length ; index++){
+    var a = data[index].Lat * 1;
+    var b = data[index].Lng * 1;
+        marker[index] =new google.maps.Marker({
+        position: {lat: a, lng: b},
+        map: map,
+        animation: google.maps.Animation.DROP,
+        title:data[index].creationDate
+        });
+    }
+
+
+        }
+
+        function get_data(){
+        user_location_connection.get_sync(test_sync);
+
+        }
+
+        ___require("cyberDEV/network/connection/connection_user_location.js","location",get_data);
+</psco_head>
+<psco_body>
+    <style>
+        #map {
+            height: 80vh;
+        }
+    </style>
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Locations</div>
+        <div id="map"></div>
+    </div>
+
+</psco_body>

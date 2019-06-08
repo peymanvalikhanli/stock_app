@@ -1,0 +1,124 @@
+<psco_head>
+
+    function new_file(){
+        location.replace("#new_file");
+    }
+
+    function test_data(){
+
+
+    get_files_name_last_name_connection.get();
+    var t = $('#data_table').DataTable({
+
+    "columns": [
+    { "width": "2%", "className": "dt-center","orderable": false , "searchable": false },
+    { "className": "dt-center" , "visible": false },
+    { "className": "dt-center" },
+    { "className": "dt-center" },
+    { "className": "dt-center" },
+    { "className": "dt-center" },
+    { "className": "dt-center" },
+    { "className": "dt-center" },
+    { "className": "dt-center","orderable": false , "searchable": false }
+    ],
+
+    "dom": 'Bfrtip',
+
+    "buttons": [
+    'copy', 'csv', 'excel', 'pdf', 'print',
+    {
+    text: 'New',
+    className:'btn-success psco_btn_new',
+    action: function ( e, dt, node, config ) {
+        new_file();
+    }
+    }
+    ],
+
+    "select": true,
+
+    "columnDefs": [ {
+    "targets": -1,
+    "data": null,
+    "defaultContent": "<button id='details' class='btn-success'>Details</button><button id='btn_delete' class='btn-danger'>Delete</button>"
+    } ],
+
+    initComplete: function () {
+    $('.psco_btn_new').html('<span class="glyphicon glyphicon-file" data-toggle="tooltip" title="Export To Excel"/>&nbsp;New')
+    }
+
+    });
+
+    $('#data_table tbody').on( 'click', 'button', function () {
+        var data = t.row( $(this).parents('tr') ).data();
+        //alert( "name is "+ data[1] +" "+ data[ 2 ] );
+        if (this.id == "btn_delete"){
+            files_connection.delete(data[1]);
+            location.replace("#file?");
+            setTimeout(function(){location.replace("#file");}, 1000);
+        }else if(this.id == "details"){
+            location.replace("#new_file?id="+data[1]);
+        }
+    } );
+
+    if(get_files_name_last_name_connection.data!=null){
+
+    for(i=0;i<get_files_name_last_name_connection.data.length;i++){
+        var type = "open";
+        switch(get_files_name_last_name_connection.data[i].type){
+            case -1:
+                type = "cancel";
+                break;
+            case 0:
+                type = "open";
+                break;
+            case 1:
+                type = "close";
+                break;
+        }
+        t.row.add([(i+1),get_files_name_last_name_connection.data[i].ID,get_files_name_last_name_connection.data[i].name,get_files_name_last_name_connection.data[i].last_name,get_files_name_last_name_connection.data[i].tel,type,get_files_name_last_name_connection.data[i].title,get_files_name_last_name_connection.data[i].date]).draw( false );}
+    }else{
+    setTimeout(function(){
+    //debugger;
+    for(i=0;i<get_files_name_last_name_connection.data.length;i++){
+    var type = "open";
+    switch(get_files_name_last_name_connection.data[i].type){
+    case "-1":
+    type = "cancel";
+    break;
+    case "0":
+    type = "open";
+    break;
+    case "1":
+    type = "close";
+    break;
+    }
+    t.row.add([(i+1),get_files_name_last_name_connection.data[i].ID,get_files_name_last_name_connection.data[i].name,get_files_name_last_name_connection.data[i].last_name,get_files_name_last_name_connection.data[i].tel,type,get_files_name_last_name_connection.data[i].title,get_files_name_last_name_connection.data[i].date]).draw( false );}
+    }, 500);
+
+    }
+    }
+    __require("cyberDEV/network/connection/connection_files.js");
+    ___require("cyberDEV/network/connection/connection_get_files_name_last_name.js","test",test_data);
+
+</psco_head>
+<psco_body>
+    <div class="panel panel-default">
+        <div class="panel-heading">Files</div>
+    </div>
+    <table id="data_table" class="display" style="width:100%">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Last name</th>
+            <th>Mobile</th>
+            <th>Type</th>
+            <th>Title</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+    </table>
+</psco_body>

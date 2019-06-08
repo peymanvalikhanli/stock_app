@@ -1,0 +1,6 @@
+{
+  "dashboar":{"name":"Locations","icon":"glyphicon glyphicon-map-marker","url":"#locations"},
+  "users":{"name":"Users","icon":"glyphicon glyphicon-user","url":"#users"},
+  "messages":{"name":"Messages","icon":"glyphicon glyphicon-comment","url":"#messages"},
+  "files":{"name":"Files","icon":"glyphicon glyphicon-folder-open","url":"#file"}
+}

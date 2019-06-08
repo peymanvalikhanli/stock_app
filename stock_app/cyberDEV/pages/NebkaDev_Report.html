@@ -1,0 +1,314 @@
+<psco_head>
+
+    $(function () {
+    $('#tbl_stack').DataTable({
+    'lengthChange': false,
+    'bPaginate': false,
+    'info': false,
+    })
+    $('#tbl_company').DataTable({
+    'lengthChange': false,
+    'bPaginate': false,
+    'info': false,
+    })
+    $('#tbl_Volume').DataTable({
+    'lengthChange': false,
+    'bPaginate': false,
+    'info': false,
+    })
+    $('#tbl_symbol').DataTable({
+    'lengthChange': false,
+    'bPaginate': false,
+    'info': false,
+    })
+
+    })
+
+</psco_head>
+<psco_body>
+    <div class="row">
+        <div class="box">
+            <!--<div class="box-header">-->
+            <!---->
+            <!--</div>-->
+            <div class="box-body col-md-12">
+                <!-- Custom Tabs -->
+                <div class="nav-tabs-custom" style="min-height: 83vh;">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab_stack" data-toggle="tab">
+                        صف خرید و فروش
+                        </a></li>
+                        <li><a href="#tab_company" data-toggle="tab">
+حقیقی حقوقی
+                        </a></li>
+                        <li><a href="#tab_Volume" data-toggle="tab">
+حجم های غیرمعمول
+                        </a></li>
+                        <li><a href="#tab_symbol" data-toggle="tab">
+نمادهای حق تقدم دار
+                        </a></li>
+                        <li><a href="#tab_null" data-toggle="tab">
+گزارش روزانه
+                        </a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <!--tab stack-->
+                        <div class="tab-pane active" id="tab_stack">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="box">
+                                        <!--<div class="box-header">-->
+                                        <!---->
+                                        <!--</div>-->
+                                        <div class="box-body">
+                                            <table id="tbl_stack" class="table table-bordered table-striped table-hover text-center">
+                                                <thead>
+                                                <tr>
+                                                    <th colspan="4">
+                                                        خرید
+                                                    </th>
+                                                    <th colspan="4">
+                                                        فروش
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        نماد
+                                                    </th>
+                                                    <th>
+                                                        تعداد
+                                                    </th>
+                                                    <th>
+                                                        حجم
+                                                    </th>
+                                                    <th>
+                                                        مبلغ
+                                                    </th>
+                                                    <th>
+                                                        نماد
+                                                    </th>
+                                                    <th>
+                                                        تعداد
+                                                    </th>
+                                                    <th>
+                                                        حجم
+                                                    </th>
+                                                    <th>
+                                                        مبلغ
+                                                    </th>
+
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>apple</td>
+                                                    <td>10</td>
+                                                    <td>100</td>
+                                                    <td>100,000</td>
+                                                    <td>apple</td>
+                                                    <td>90</td>
+                                                    <td>12,000</td>
+                                                    <td>123,123,000</td>
+                                                </tr>
+                                                </tbody>
+                                                </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.tab-pane -->
+                        <!--tab company-->
+                        <div class="tab-pane" id="tab_company">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="box">
+                                        <!--<div class="box-header">-->
+                                        <!---->
+                                        <!--</div>-->
+                                        <div class="box-body">
+                                            <table id="tbl_company" class="table table-bordered table-striped table-hover text-center">
+                                                <thead>
+                                                <tr>
+                                                    <th rowspan="2">
+                                                        نماد
+                                                    </th>
+                                                    <th colspan="4">
+                                                        خرید
+                                                    </th>
+                                                    <th rowspan="2">
+                                                        وضعیت
+                                                    </th>
+                                                    <th colspan="4">
+                                                        فروش
+                                                    </th>
+                                                    <th rowspan="2">
+                                                        وضعیت
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                    ٪
+                                                    </th>
+                                                    <th>
+                                                    خرید
+                                                    </th>
+                                                    <th>
+                                                    ٪
+                                                    </th>
+                                                    <th>
+                                                    فروش
+                                                    </th>
+
+                                                    <th>
+                                                    ٪
+                                                    </th>
+                                                    <th>
+                                                    خرید
+                                                    </th>
+                                                    <th>
+                                                    ٪
+                                                    </th>
+                                                    <th>
+                                                    فروش
+                                                    </th>
+
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>apple</td>
+                                                    <td>10</td>
+                                                    <td>100</td>
+                                                    <td>10</td>
+                                                    <td>200</td>
+                                                    <td>OK</td>
+                                                    <td>10</td>
+                                                    <td>100</td>
+                                                    <td>10</td>
+                                                    <td>200</td>
+                                                    <td>OK</td>
+                                                </tr>
+                                                </tbody>
+                                                </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.tab-pane -->
+                        <!--tab Volume-->
+                        <div class="tab-pane" id="tab_Volume">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="box">
+                                        <!--<div class="box-header">-->
+                                        <!---->
+                                        <!--</div>-->
+                                        <div class="box-body">
+                                            <table id="tbl_Volume" class="table table-bordered table-striped table-hover text-center">
+                                                <thead>
+
+                                                <tr>
+                                                    <th>
+                                                        نماد
+                                                    </th>
+                                                    <th>
+                                                        تعداد
+                                                    </th>
+                                                    <th>
+                                                        حجم معامله
+                                                    </th>
+                                                    <th>
+                                                        حجم معمول
+                                                    </th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>apple</td>
+                                                    <td>10</td>
+                                                    <td>100</td>
+                                                    <td>10</td>
+                                                </tr>
+                                                </tbody>
+                                                </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.tab-pane -->
+                        <!--tab symbol-->
+                        <div class="tab-pane" id="tab_symbol">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="box">
+                                        <!--<div class="box-header">-->
+                                        <!---->
+                                        <!--</div>-->
+                                        <div class="box-body">
+                                            <table id="tbl_symbol" class="table table-bordered table-striped table-hover text-center">
+                                                <thead>
+
+                                                <tr>
+                                                    <th>
+                                                        نماد
+                                                    </th>
+                                                    <th>
+                                                        قیمت سهم
+                                                    </th>
+                                                    <th>
+قیمت حق تقدم
+                                                    </th>
+                                                    <th>
+                                                        تفاضل
+                                                    </th>
+                                                    <th>
+                                                        ارزیابی
+                                                    </th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>apple</td>
+                                                    <td>10</td>
+                                                    <td>100</td>
+                                                    <td>10</td>
+                                                    <td>10</td>
+                                                </tr>
+                                                </tbody>
+                                                </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.tab-pane -->
+                        <!--tab null-->
+                        <div class="tab-pane" id="tab_null">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="box">
+                                        <!--<div class="box-header">-->
+                                        <!---->
+                                        <!--</div>-->
+                                        <div class="box-body">
+                                            <h1>
+                                                <i class="fa  fa-expeditedssl"></i> 404 Error
+                                            </h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.tab-pane -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</psco_body>

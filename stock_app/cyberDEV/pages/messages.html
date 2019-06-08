@@ -1,0 +1,82 @@
+<psco_head>
+    function test_data(){
+    get_message_name_last_name_connection.get_by_replay(0);
+    var t = $('#data_table').DataTable({
+
+    "columns": [
+    { "width": "2%", "className": "dt-center","orderable": false , "searchable": false },
+    { "className": "dt-center" , "visible": false },
+    { "className": "dt-center" },
+    { "className": "dt-center" },
+    { "className": "dt-center" },
+    { "className": "dt-center" },
+    { "className": "dt-center", "visible": false },
+    { "className": "dt-center" },
+    { "className": "dt-center","orderable": false , "searchable": false }
+    ],
+
+    "dom": 'Bfrtip',
+
+    "buttons": [
+    'copy', 'csv', 'excel', 'pdf', 'print'
+    ],
+
+    "select": true,
+
+    "columnDefs": [ {
+    "targets": -1,
+    "data": null,
+    "defaultContent": "<button id='show_message' style= 'margin-top: 1ch; margin-left: 1ch;' class='btn-success btn-xs'><span class='glyphicon glyphicon-comment'></span>&nbsp;Show</button><button  style= 'margin-top: 1ch; margin-left: 1ch;' class='btn-primary btn-xs'><span class='glyphicon glyphicon-send'></span>&nbsp;Reply</button>"
+    } ]
+    });
+
+//    $('#data_table tbody').on( 'click', 'button', function () {
+//    var data = t.row( $(this).parents('tr') ).data();
+    //alert( "name is "+ data[1] +" "+ data[ 2 ] );
+//    message.show("hello"," message "+data[2]+" "+data[3]);
+ //   } );
+    $('#data_table tbody ').on( 'click', 'button', function () {
+    var data = t.row( $(this).parents('tr') ).data();
+    //alert( "name is "+ data[1] +" "+ data[ 2 ] );
+    if (this.id == "show_message"){
+    message.show(data[6]," message "+data[2]+" "+data[3]);
+    }else{
+    location.replace("#reply_message?id="+data[1]);
+    }
+
+    } );
+
+    if(get_message_name_last_name_connection.data!=null){
+    for(i=0;i<get_message_name_last_name_connection.data.length;i++){t.row.add([(i+1),get_message_name_last_name_connection.data[i].ID,get_message_name_last_name_connection.data[i].name,get_message_name_last_name_connection.data[i].last_name,get_message_name_last_name_connection.data[i].tel,get_message_name_last_name_connection.data[i].title,get_message_name_last_name_connection.data[i].text,get_message_name_last_name_connection.data[i].creationDate]).draw( false );}
+    }else{
+    setTimeout(function(){
+    //debugger;
+    for(i=0;i<get_message_name_last_name_connection.data.length;i++){t.row.add([(i+1),get_message_name_last_name_connection.data[i].ID,get_message_name_last_name_connection.data[i].name,get_message_name_last_name_connection.data[i].last_name,get_message_name_last_name_connection.data[i].tel,get_message_name_last_name_connection.data[i].title,get_message_name_last_name_connection.data[i].text,get_message_name_last_name_connection.data[i].creationDate]).draw( false );}
+
+    }, 500);
+
+    }
+    }
+    ___require("cyberDEV/network/connection/connection_get_message_name_last_name.js","test",test_data);
+
+</psco_head>
+<psco_body>
+    <div class="panel panel-default">
+        <div class="panel-heading">Messages</div>
+    </div>
+    <table id="data_table" class="display" style="width:100%">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Last Name</th>
+            <th>Mobile</th>
+            <th>Title</th>
+            <th>message</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+    </table>
+</psco_body>
