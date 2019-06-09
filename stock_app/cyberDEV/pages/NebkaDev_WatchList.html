@@ -245,8 +245,14 @@
     // peyman tbl
 
     function update_tblb(){
-        BestLimitsAllIns_connection.insCode ="13235547361447092";
+        var insCode = "13235547361447092";
+
+        BestLimitsAllIns_connection.insCode = insCode ;
+
         BestLimitsAllIns_connection.get(2);
+
+        ClientType_connection.insCode = insCode ;
+        ClientType_connection.get()
     }
 
     RoozAmar_connection.init_table();
@@ -268,7 +274,7 @@
 
     update_tblb();
 
-    alert("peyman");
+   // alert("peyman");
 
 </psco_head>
 <psco_body>
@@ -667,37 +673,38 @@
                                                 </thead>
                                                 <tbody>
                                                 <tr>
-                                                    <td>
-                                                        12
+                                                    <td class="success" id="cell_p_b_count">
+
                                                     </td>
-                                                    <td>
-                                                        12
+                                                    <td class="success" id="cell_p_b_val">
+
                                                     </td>
                                                     <td class="bg-info">
                                                         حقیقی
                                                     </td>
-                                                    <td>
-                                                        12
+
+                                                    <td class="danger" id="cell_p_s_val">
+
                                                     </td>
-                                                    <td>
-                                                        12
+                                                    <td class="danger" id="cell_p_s_count">
+
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>
-                                                        12
+                                                    <td class="success" id="cell_c_b_count">
+
+                                                </td>
+                                                    <td class="success" id="cell_c_b_val">
+
                                                     </td>
-                                                    <td>
-                                                        12
-                                                    </td>
-                                                    <td class="bg-info">
+                                                    <td  class="bg-info">
                                                         حقوقی
                                                     </td>
-                                                    <td>
-                                                        12
+                                                    <td class="danger" id="cell_c_s_val">
+
                                                     </td>
-                                                    <td>
-                                                        12
+                                                    <td class="danger" id="cell_c_s_count">
+
                                                     </td>
                                                 </tr>
                                                 </tbody>
@@ -726,8 +733,8 @@
                                                 حجم معاملات
                                             </h3>
 
-                                            <p class="text-center">
-                                                12,123,123
+                                            <p class="text-center" id="trade_val">
+
                                             </p>
                                         </div>
                                         <div class="row  col-md-12">
