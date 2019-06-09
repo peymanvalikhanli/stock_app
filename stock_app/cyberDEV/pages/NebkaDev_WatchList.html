@@ -242,6 +242,33 @@
     }]
     });
 
+    // peyman tbl
+
+    function update_tblb(){
+        BestLimitsAllIns_connection.insCode ="13235547361447092";
+        BestLimitsAllIns_connection.get(2);
+    }
+
+    RoozAmar_connection.init_table();
+    function update_data(){
+       // RoozAmar_connection.tbl_TradeLastDay.row.remove();
+        RoozAmar_connection.tbl_TradeLastDay.clear();
+        RoozAmar_connection.get(1);
+        RoozAmar_connection.get(2);
+       // RoozAmar_connection.get(3); // No
+        RoozAmar_connection.get(4);
+        RoozAmar_connection.get(5);
+    }
+
+
+
+
+   // setInterval(function(){update_data();}, 2000);
+    update_data();
+
+    update_tblb();
+
+    alert("peyman");
 
 </psco_head>
 <psco_body>
@@ -252,14 +279,14 @@
                 <!--</div>-->
                 <!-- /.box-header -->
                 <div class="box-body" style="min-height: 83vh;">
-                    <table id="example2" class="table table-bordered table-hover col-md-10">
+                    <table id="tbl_TradeLastDay" class="table table-bordered table-hover col-md-10">
                         <thead>
                         <tr>
                             <th>
                                 نماد
                             </th>
                             <th>
-                                آخرین م
+آخرین ق
                             </th>
                             <th>
                                 ٪ آخر
@@ -273,26 +300,8 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>
-                                apple
-                            </td>
-                            <td>
-                                500
-                            </td>
-                            <td>
-                                2
-                            <td>
-                                2000
-                            <td>
-                                20
-                            </td>
-
-                        </tr>
-                        </tr>
                         </tbody>
                         <tfoot>
-
                         </tfoot>
                     </table>
                 </div>
@@ -423,107 +432,107 @@
                                                     </th>
                                                 </tr>
                                                 </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <td class="success">
-                                                        14
-                                                    </td>
-                                                    <td class="success">
-                                                        384,123
-                                                    </td>
-                                                    <td class="success">
-                                                        3,460
-                                                    </td>
-                                                    <td class="danger">
-                                                        3,460
-                                                    </td>
-                                                    <td class="danger">
-                                                        123,123
-                                                    </td>
-                                                    <td class="danger">
-                                                        2
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="success">
-                                                        14
-                                                    </td>
-                                                    <td class="success">
-                                                        384,123
-                                                    </td>
-                                                    <td class="success">
-                                                        3,460
-                                                    </td>
-                                                    <td class="danger">
-                                                        3,460
-                                                    </td>
-                                                    <td class="danger">
-                                                        123,123
-                                                    </td>
-                                                    <td class="danger">
-                                                        2
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="success">
-                                                        14
-                                                    </td>
-                                                    <td class="success">
-                                                        384,123
-                                                    </td>
-                                                    <td class="success">
-                                                        3,460
-                                                    </td>
-                                                    <td class="danger">
-                                                        3,460
-                                                    </td>
-                                                    <td class="danger">
-                                                        123,123
-                                                    </td>
-                                                    <td class="danger">
-                                                        2
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="success">
-                                                        14
-                                                    </td>
-                                                    <td class="success">
-                                                        384,123
-                                                    </td>
-                                                    <td class="success">
-                                                        3,460
-                                                    </td>
-                                                    <td class="danger">
-                                                        3,460
-                                                    </td>
-                                                    <td class="danger">
-                                                        123,123
-                                                    </td>
-                                                    <td class="danger">
-                                                        2
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="success">
-                                                        14
-                                                    </td>
-                                                    <td class="success">
-                                                        384,123
-                                                    </td>
-                                                    <td class="success">
-                                                        3,460
-                                                    </td>
-                                                    <td class="danger">
-                                                        3,460
-                                                    </td>
-                                                    <td class="danger">
-                                                        123,123
-                                                    </td>
-                                                    <td class="danger">
-                                                        2
-                                                    </td>
-                                                </tr>
+                                                <tbody id="tbl_bestlimit">
+                                                <!--<tr>-->
+                                                    <!--<td class="success">-->
+                                                        <!--14-->
+                                                    <!--</td>-->
+                                                    <!--<td class="success">-->
+                                                        <!--384,123-->
+                                                    <!--</td>-->
+                                                    <!--<td class="success">-->
+                                                        <!--3,460-->
+                                                    <!--</td>-->
+                                                    <!--<td class="danger">-->
+                                                        <!--3,460-->
+                                                    <!--</td>-->
+                                                    <!--<td class="danger">-->
+                                                        <!--123,123-->
+                                                    <!--</td>-->
+                                                    <!--<td class="danger">-->
+                                                        <!--2-->
+                                                    <!--</td>-->
+                                                <!--</tr>-->
+                                                <!--<tr>-->
+                                                    <!--<td class="success">-->
+                                                        <!--14-->
+                                                    <!--</td>-->
+                                                    <!--<td class="success">-->
+                                                        <!--384,123-->
+                                                    <!--</td>-->
+                                                    <!--<td class="success">-->
+                                                        <!--3,460-->
+                                                    <!--</td>-->
+                                                    <!--<td class="danger">-->
+                                                        <!--3,460-->
+                                                    <!--</td>-->
+                                                    <!--<td class="danger">-->
+                                                        <!--123,123-->
+                                                    <!--</td>-->
+                                                    <!--<td class="danger">-->
+                                                        <!--2-->
+                                                    <!--</td>-->
+                                                <!--</tr>-->
+                                                <!--<tr>-->
+                                                    <!--<td class="success">-->
+                                                        <!--14-->
+                                                    <!--</td>-->
+                                                    <!--<td class="success">-->
+                                                        <!--384,123-->
+                                                    <!--</td>-->
+                                                    <!--<td class="success">-->
+                                                        <!--3,460-->
+                                                    <!--</td>-->
+                                                    <!--<td class="danger">-->
+                                                        <!--3,460-->
+                                                    <!--</td>-->
+                                                    <!--<td class="danger">-->
+                                                        <!--123,123-->
+                                                    <!--</td>-->
+                                                    <!--<td class="danger">-->
+                                                        <!--2-->
+                                                    <!--</td>-->
+                                                <!--</tr>-->
+                                                <!--<tr>-->
+                                                    <!--<td class="success">-->
+                                                        <!--14-->
+                                                    <!--</td>-->
+                                                    <!--<td class="success">-->
+                                                        <!--384,123-->
+                                                    <!--</td>-->
+                                                    <!--<td class="success">-->
+                                                        <!--3,460-->
+                                                    <!--</td>-->
+                                                    <!--<td class="danger">-->
+                                                        <!--3,460-->
+                                                    <!--</td>-->
+                                                    <!--<td class="danger">-->
+                                                        <!--123,123-->
+                                                    <!--</td>-->
+                                                    <!--<td class="danger">-->
+                                                        <!--2-->
+                                                    <!--</td>-->
+                                                <!--</tr>-->
+                                                <!--<tr>-->
+                                                    <!--<td class="success">-->
+                                                        <!--14-->
+                                                    <!--</td>-->
+                                                    <!--<td class="success">-->
+                                                        <!--384,123-->
+                                                    <!--</td>-->
+                                                    <!--<td class="success">-->
+                                                        <!--3,460-->
+                                                    <!--</td>-->
+                                                    <!--<td class="danger">-->
+                                                        <!--3,460-->
+                                                    <!--</td>-->
+                                                    <!--<td class="danger">-->
+                                                        <!--123,123-->
+                                                    <!--</td>-->
+                                                    <!--<td class="danger">-->
+                                                        <!--2-->
+                                                    <!--</td>-->
+                                                <!--</tr>-->
 
                                                 </tbody>
                                                 <tfoot>
