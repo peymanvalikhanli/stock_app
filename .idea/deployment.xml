@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="tadbirgar_stock">
+  <component name="PublishConfigData" serverName="develope@vip.tadbirgar.com">
     <serverData>
-      <paths name="tadbirgar_stock">
+      <paths name="develope@vip.tadbirgar.com">
         <serverdata>
           <mappings>
-            <mapping deploy="/" local="$PROJECT_DIR$" web="stock_app" />
+            <mapping deploy="/stock_app" local="$PROJECT_DIR$" web="stock_app" />
           </mappings>
         </serverdata>
       </paths>
