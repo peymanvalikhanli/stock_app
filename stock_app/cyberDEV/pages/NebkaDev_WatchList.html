@@ -146,101 +146,6 @@
     test_elm.appendChild(wiget_script);
 
 
-    //____________________personal chart
-    Highcharts.chart('chart_personal', {
-    chart: {
-    type: 'pie',
-    options3d: {
-    enabled: true,
-    alpha: 45,
-    beta: 0
-    }
-    },
-    exporting: { enabled: false },
-    credits: { enabled: false },
-    title: {
-    text: ''
-    },
-    tooltip: {
-    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-    },
-    plotOptions: {
-    pie: {
-    allowPointSelect: true,
-    cursor: 'pointer',
-    depth: 35,
-    dataLabels: {
-    enabled: true,
-    format: '{point.name}'
-    }
-    }
-    },
-    series: [{
-    type: 'pie',
-    name: 'حقیقی',
-    data: [
-
-    {
-    name: 'فروش',
-    y: 14.8,
-    color: '#FF0000'
-    },{
-    name: 'خرید',
-    y: 12.8,
-    color: '#00FF00',
-    selected: true
-    }
-    ]
-    }]
-    });
-
-    //____________________personal chart
-    Highcharts.chart('chart_company', {
-    chart: {
-    type: 'pie',
-    options3d: {
-    enabled: true,
-    alpha: 45,
-    beta: 0
-    }
-    },
-    exporting: { enabled: false },
-    credits: { enabled: false },
-    title: {
-    text: ''
-    },
-    tooltip: {
-    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-    },
-    plotOptions: {
-    pie: {
-    allowPointSelect: true,
-    cursor: 'pointer',
-    depth: 35,
-    dataLabels: {
-    enabled: true,
-    format: '{point.name}'
-    }
-    }
-    },
-    series: [{
-    type: 'pie',
-    name: 'حقوقی',
-    data: [
-
-    {
-    name: 'فروش',
-    y: 14.8,
-    color: '#FF0000'
-    },{
-    name: 'خرید',
-    y: 12.8,
-    color: '#00FF00',
-    selected: true
-    }
-    ]
-    }]
-    });
 
     // peyman tbl
 
@@ -255,15 +160,25 @@
         ClientType_connection.get()
     }
 
-    RoozAmar_connection.init_table();
+    //RoozAmar_connection.init_table();
+    Instrument_connection.init_table();
     function update_data(){
-       // RoozAmar_connection.tbl_TradeLastDay.row.remove();
-        RoozAmar_connection.tbl_TradeLastDay.clear();
-        RoozAmar_connection.get(1);
-        RoozAmar_connection.get(2);
+
+    // RoozAmar_connection.tbl_TradeLastDay.row.remove();
+    //    RoozAmar_connection.tbl_TradeLastDay.clear();
+    //    RoozAmar_connection.get(1);
+    //    RoozAmar_connection.get(2);
        // RoozAmar_connection.get(3); // No
-        RoozAmar_connection.get(4);
-        RoozAmar_connection.get(5);
+    //    RoozAmar_connection.get(4);
+    //    RoozAmar_connection.get(5);
+
+
+    Instrument_connection.tbl_TradeLastDay.clear();
+    Instrument_connection.get();
+    //Instrument_connection.get(2);
+    // Instrument_connection.get(3); // No
+    //Instrument_connection.get(4);
+    //Instrument_connection.get(5);
     }
 
 
@@ -285,7 +200,7 @@
                 <!--</div>-->
                 <!-- /.box-header -->
                 <div class="box-body" style="min-height: 83vh;">
-                    <table id="tbl_TradeLastDay" class="table table-bordered table-hover col-md-10">
+                    <table id="tbl_TradeLastDay" class="table table-bordered table-hover table-striped col-md-10">
                         <thead>
                         <tr>
                             <th>
@@ -666,8 +581,8 @@
                             <div class="col-md-4">
                                 <div class="box">
                                     <div class="box-body">
-                                        <div class="row  col-md-12">
-                                            <table class="table table-responsive table-active col-md-12 text-center ">
+                                        <div class="row  col-xd-12">
+                                            <table class="table table-responsive table-active table-bordered col-md-12 text-center ">
                                                 <thead>
 
                                                 </thead>
@@ -679,10 +594,17 @@
                                                     <td class="success" id="cell_p_b_val">
 
                                                     </td>
+                                                    <td class="success" id="cell_p_b_val_c">
+
+                                                    </td>
+
                                                     <td class="bg-info">
                                                         حقیقی
                                                     </td>
 
+                                                    <td class="danger" id="cell_p_s_val_c">
+
+                                                    </td>
                                                     <td class="danger" id="cell_p_s_val">
 
                                                     </td>
@@ -697,8 +619,14 @@
                                                     <td class="success" id="cell_c_b_val">
 
                                                     </td>
+                                                    <td class="success" id="cell_c_b_val_c">
+
+                                                    </td>
                                                     <td  class="bg-info">
                                                         حقوقی
+                                                    </td>
+                                                    <td class="danger" id="cell_c_s_val_c">
+
                                                     </td>
                                                     <td class="danger" id="cell_c_s_val">
 
