@@ -28,14 +28,15 @@
     }
     );
     */
-    /////////////////////////////////////////
 
+    /////////////////////////////////////////
+/*
     var widget = new TradingView.widget(
     {
     //"autosize": true,
     "width": window.innerWidth * 0.55,
     "height": window.innerHeight* 0.8,
-    "symbol": "NASDAQ:AAPL",
+    "symbol": "azari",
     "interval": "D",
     "timezone": "Asia/Tehran",
     "theme": "Light",
@@ -45,6 +46,7 @@
     "enable_publishing": false,
     "allow_symbol_change": false,
     "container_id": "tradingview_b0220",
+    datafeed: new Datafeeds.UDFCompatibleDatafeed("http://vip.tadbirgar.com/api/tradingview"),
     "fullscreen": false,
     "locale": "fa-IR",//getParameterByName('lang') || "fa",
     "supported_resolutions": ["1D", "1W", "1M"],
@@ -86,6 +88,63 @@
     });
 
 
+
+
+    function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+    results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+    */
+/*
+    function initOnReady() {
+    //debugger;
+    var udf_datafeed =new Datafeeds.UDFCompatibleDatafeed("http://vip.tadbirgar.com/api/tradingview");
+    var widget = window.tvWidget = new TradingView.widget({
+    debug: true, // uncomment this line to see Library errors and warnings in the console
+    //fullscreen: true,
+    "width": window.innerWidth * 0.55,
+    "height": window.innerHeight* 0.8,
+    symbol: 'mahsa',
+    interval: 'D',
+    container_id: "tradingview_b0220",
+
+    "timezone": "Asia/Tehran",
+   //"theme": "Light",
+    "style": "1",
+    "locale": "fa_IR",
+    "toolbar_bg": "#f1f3f6",
+    "enable_publishing": false,
+    "allow_symbol_change": true,
+
+    "supported_resolutions": ["1D", "1W", "1M"],
+    "hide_side_toolbar": false,
+    "time_frames": [
+    {"text": "10y", "resolution": "6M"},
+    {"text": "1y", "resolution": "W"},
+    {"text": "6m", "resolution": "D"},
+    {"text": "1m", "resolution": "D"},
+    {"text": "7d", "resolution": "D"},
+    {"text": "1d", "resolution": "D"},
+    ],
+
+    "datafeed": udf_datafeed ,
+    library_path: "charting_library/",
+    locale: getParameterByName('lang') || "en",
+
+    disabled_features: ["use_localstorage_for_settings"],
+    enabled_features: ["study_templates"],
+    charts_storage_url: 'http://saveload.tradingview.com',
+    charts_storage_api_version: "1.1",
+    client_id: 'tradingview.com',
+    user_id: 'public_user_id',
+    theme: getParameterByName('theme')
+    });
+    };
+    initOnReady();
+
+*/
     //--------------- peyman test
     var test_elm = document.getElementById("test_peyman");
     var wiget_script = document.createElement("script");
@@ -193,8 +252,9 @@
 
 </psco_head>
 <psco_body>
-    <div class="row">
-        <div class="col-md-4" style="    margin-right: -1%; margin-left: -2.5%;">
+    <div class="row" class="col-xs-12">
+        <div class="col-xs-4" >
+             <!--style="    margin-right: -1%; margin-left: -2.5%;">-->
             <div class="box">
                 <!--<div class="box-header">-->
                 <!--</div>-->
@@ -231,7 +291,8 @@
             <!-- /.box -->
         </div>
 
-        <div class="col-md-9" style="margin-right: -4%; margin-left: -2.5%;">
+        <div class="col-xs-8" >
+            <!--style="margin-right: -4%; margin-left: -2.5%;">-->
             <div class="box">
                 <!--<div class="box-header">-->
                 <!--</div>-->
@@ -239,7 +300,11 @@
                 <div class="box-body">
                     <!-- TradingView Widget BEGIN -->
                     <div class="tradingview-widget-container" style="min-height: 80vh;">
-                        <div id="tradingview_b0220"></div>
+                        <iframe style="width: 100%; height: 80vh; border:none; overflow: visible;" src="http://vip.tadbirgar.com/stock_app/stock_app/cyberDEV/charting_library-master/index.html">
+
+                        </iframe>
+                        <!--<div id="tradingview_b0220">-->
+                        <!--</div>-->
                     </div>
                     <!-- TradingView Widget END -->
                 </div>
