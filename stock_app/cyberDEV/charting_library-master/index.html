@@ -13,6 +13,8 @@
     <script type="text/javascript" src="datafeeds/udf/dist/bundle.js"></script>
     <script type="text/javascript" src="charting_library/static/persiandate.js"></script>
 
+    <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+
     <script type="text/javascript">
 
         function getParameterByName(name) {
@@ -77,23 +79,72 @@
                 //____________________________________
 
             });
-        };
 
+            widget.headerReady().then(function () {
+                var param = {};
+
+                //window.select_adj_price = true ;
+//                function aa(){
+//                    alert("hi");
+//                }
+                var button = widget.createButton();
+                var select_button = document.createElement("select");
+                var op1 = document.createElement("option");
+                var op2 = document.createElement("option");
+
+                $.post("http://vip.tadbirgar.com/api/tradingview/history/getmode.php", param, function (result) {
+                    if(result.trim()=="no" || result.trim()==""){
+                        select_button.setAttribute("style","background: red;color:#ffffff;height: 9vh;");
+                        op2.setAttribute("selected","");
+                    }else{
+                        select_button.setAttribute("style","background: green;color:#ffffff;height: 9vh;");
+                        op1.setAttribute("selected","");
+                    }
+                });
+                //select_button.setAttribute("value",select_value);
+
+                select_button.setAttribute("id","select_adj_price");
+//               select_button.setAttribute("onchange","aa()");
+                select_button.addEventListener('change', function() {
+                    var value = this.options[this.selectedIndex].value;
+                    console.log(value);
+                    console.log(this);
+                    if(value.trim()== "notAdj") {
+                        this.setAttribute("style", "background: red;color:#ffffff;height: 9vh;");
+                        set_adj_price(true);
+                    }else{
+                        this.setAttribute("style", "background: green;color:#ffffff;height: 9vh;");
+                        set_adj_price(false);
+                    }
+                    location.reload();
+                });
+                op1.setAttribute("style","background: green;color:#ffffff;height: 9vh;");
+                op1.setAttribute("value","adj");
+                op2.setAttribute("style","background: red;color:#ffffff;height: 9vh;");
+                op2.setAttribute("value","notAdj");
+                op1.innerHTML = 'تعدیل شده';
+                op2.innerHTML = 'تعدیل نشده';
+                select_button.appendChild(op1);
+                select_button.appendChild(op2);
+                button.appendChild(select_button);
+
+            });
+
+
+        };
         window.addEventListener('DOMContentLoaded', initOnReady, false);
 
-        function aa(){
-            var a = document.getElementsByClassName("fill-2axUON87- group-wWM3zP_M-");
-            var b = document.createElement("select");
-            a[0].appendChild(b);
-            var op1 = document.createElement("option");
-            var op2 = document.createElement("option");
-            op1.innerHTML = "بدون تعدیل";
-            op2.innerHTML = "با تعدیل";
-            b.appendChild(op1);
-            b.appendChild(op2);
+        function set_adj_price(is_no_adj) {
+            var param = {};
+            if(is_no_adj) {
+              param =  {use_adj: 1};
+            }
+            $.post("http://vip.tadbirgar.com/api/tradingview/history/setmode.php", param, function (result) {
+                console.log(result);
+            });
         }
+       // set_adj_price(false);
 
-        setTimeout(aa(),20000);
     </script>
 
 </head>
