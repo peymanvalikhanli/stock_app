@@ -27,8 +27,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/stock_app/cyberDEV/charting_library-master/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.18023255" vertical-offset="148" max-vertical-offset="1470">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.7383721" vertical-offset="1126" max-vertical-offset="1665">
+              <caret line="92" column="31" selection-start-line="85" selection-start-column="12" selection-end-line="92" selection-end-column="31" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -90,8 +90,8 @@
         <option value="$PROJECT_DIR$/stock_app/cyberDEV/charting_library-master/charting_library/static/persiandate.js" />
         <option value="$PROJECT_DIR$/stock_app/cyberDEV/charting_library-master/charting_library/static/es-tv-chart.e6c523133ea801233691.html" />
         <option value="$PROJECT_DIR$/stock_app/cyberDEV/charting_library-master/test.html" />
-        <option value="$PROJECT_DIR$/stock_app/cyberDEV/charting_library-master/index.html" />
         <option value="$PROJECT_DIR$/stock_app/cyberDEV/charting_library-master/charting_library/static/en-tv-chart.e6c523133ea801233691.html" />
+        <option value="$PROJECT_DIR$/stock_app/cyberDEV/charting_library-master/index.html" />
       </list>
     </option>
   </component>
@@ -718,8 +718,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/stock_app/cyberDEV/charting_library-master/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18023255" vertical-offset="148" max-vertical-offset="1470">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.7383721" vertical-offset="1126" max-vertical-offset="1665">
+          <caret line="92" column="31" selection-start-line="85" selection-start-column="12" selection-end-line="92" selection-end-column="31" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>

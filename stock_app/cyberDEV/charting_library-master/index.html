@@ -41,7 +41,7 @@
                 user_id: 'public_user_id',
 //					//_________________peyman confige
                 interval: 'D',
-                supported_resolutions:["1", "15", "30" , "60" , "120" , "240" , "D", "W", "M", "6M" , "12M"],
+                supported_resolutions: ["1", "15", "30", "60", "120", "240", "D", "W", "M", "6M", "12M"],
                 customFormatters: {
                     timeFormatter: {
                         format: function (date) {
@@ -77,10 +77,23 @@
                 //____________________________________
 
             });
-        }
-        ;
+        };
 
         window.addEventListener('DOMContentLoaded', initOnReady, false);
+
+        function aa(){
+            var a = document.getElementsByClassName("fill-2axUON87- group-wWM3zP_M-");
+            var b = document.createElement("select");
+            a[0].appendChild(b);
+            var op1 = document.createElement("option");
+            var op2 = document.createElement("option");
+            op1.innerHTML = "بدون تعدیل";
+            op2.innerHTML = "با تعدیل";
+            b.appendChild(op1);
+            b.appendChild(op2);
+        }
+
+        setTimeout(aa(),20000);
     </script>
 
 </head>
