@@ -250,17 +250,108 @@
 
    // alert("peyman");
 
+    $("#tbl_searchclear").click(function(){
+    Instrument_connection.search_tbl_clr();
+    });
+
+    function btn_copy(){
+    $(".buttons-copy").click();
+    }
+
+    function btn_excel(){
+    $(".buttons-excel").click();
+    }
+
+
+
 </psco_head>
 <psco_body>
     <div class="row" class="col-xs-12">
-        <div class="col-xs-4" >
+        <div class="col-xs-3" >
              <!--style="    margin-right: -1%; margin-left: -2.5%;">-->
             <div class="box">
                 <!--<div class="box-header">-->
                 <!--</div>-->
                 <!-- /.box-header -->
-                <div class="box-body" style="min-height: 83vh;">
-                    <table id="tbl_TradeLastDay" class="table table-bordered table-hover table-striped col-md-10">
+                <div class="box-body" style="min-height: 80.5vh;padding-bottom: 0px;">
+                    <style type="text/css" >
+                        #tooltip {
+                            position: fixed;
+                            z-index: 1001;
+                            display: none;
+                            border: 2px solid #ebebeb;
+                            border-radius: 5px;
+                            padding: 10px;
+                            background-color: #ffffca;
+                            min-width: 100px;
+                            min-height: 20px;
+                        }
+                        .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+                            background-color: rgb(164,194,244);
+                        }
+
+                        .dt-buttons a:nth-child(1){
+                            background-color:LightGreen;
+                        }
+                        button.dt-button, div.dt-button, a.dt-button
+                        {background-image:none;}
+                        /*.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {*/
+                            /*background: rgb(255,229,153)!important;*/
+                        /*}*/
+                        .peyman > tbody > tr:hover {
+                            background: rgb(255,229,153)!important;
+                        }
+
+                        #searchinput {
+                            width: 100%;
+                            /*padding-right: 25px;*/
+                            padding-left: 20px;
+                        }
+                        #tbl_searchclear {
+                            position: absolute;
+                            left: 5px;
+                            top: 0;
+                            bottom: 0;
+                            height: 14px;
+                            margin: auto;
+                            font-size: 14px;
+                            cursor: pointer;
+                            color: #FF0000;
+                            display: none;
+                        }
+                        .p_btn{
+                            position: absolute;
+                            left: 5px;
+                            top: 0;
+                            bottom: 0;
+                            height: 14px;
+                            margin: auto;
+                            font-size: 14px;
+                            /*cursor: pointer;*/
+                            color: #ccc;
+                        }
+                        .peyman th { font-size: 12px; }
+                        .peyman tr td:first-child {
+                            font-size: 12px;
+                            font-weight: 600;
+                        }
+                        .peyman tr td{
+                            font-size: 12px;
+                        }
+                   </style>
+                    <div id="tooltip"></div>
+
+                    <div class="btn-group" style="position: absolute;z-index: 10000;width: 44%;">
+                        <span id="tbl_searchclear" class="fa fa-remove"></span>
+                        <input id="searchinput" type="search" class="form-control" onkeyup="Instrument_connection.search_tbl()" placeholder="جست و جو نماد">
+                        <span id="tbl_searchicon"class="fa fa-search p_btn"></span>
+                    </div>
+                    <div style="position: absolute;left: 2%;z-index: 1000;background: white;width: 60%;direction: ltr;padding-left: 4%;" >
+                        <a id="#btn_copy" onclick="btn_copy()" class="btn btn-social-icon btn-vk" data-toggle="tooltip" title="کپی"><i class="fa fa-clipboard"></i></a>
+                        <a id="#btn_excel" onclick="btn_excel()" class="btn btn-social-icon btn-success" data-toggle="tooltip" title="اکسل"><i class="fa fa-file-excel-o"></i></a>
+                    </div>
+
+                    <table id="tbl_TradeLastDay" class="table table-bordered table-striped peyman  col-md-12">
                         <thead>
                         <tr>
                             <th>
@@ -278,6 +369,9 @@
                             <th>
                                 ٪ پایانی
                             </th>
+                            <th>
+                                name
+                            </th>
                         </tr>
                         </thead>
                         <tbody>
@@ -291,7 +385,7 @@
             <!-- /.box -->
         </div>
 
-        <div class="col-xs-8" >
+        <div class="col-xs-9" style="    margin: 0;padding: 0;padding-left: 1%;" >
             <!--style="margin-right: -4%; margin-left: -2.5%;">-->
             <div class="box">
                 <!--<div class="box-header">-->
