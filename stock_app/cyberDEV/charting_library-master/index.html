@@ -155,4 +155,55 @@
 <div id="tv_chart_container"></div>
 </body>
 
+<script type="text/javascript">
+
+
+    function hashchanged(){
+        var hash = location.hash.replace( /^#/, '' );
+        //your code
+        console.log(decodeURIComponent(hash));
+//        var end_page_name = hash.indexOf("?");
+//        var file ="";
+//        if(hash!="") {
+//            file = "cyberDEV/pages/" + ( end_page_name != -1 ? hash.substring(0, end_page_name) : hash ) + ".html";
+//        }else{
+//            file = "cyberDEV/pages/" + "index.html";
+//        }
+
+        window.tvWidget.setSymbol(decodeURIComponent(hash),'D',function(){})
+
+      //  includeHTML(file,elemnt);
+       // console.log()
+    }
+
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    $(window).on('hashchange', function(){
+        hashchanged();
+    }).trigger('hashchanged'); // bind event to the same selector as event-listener
+
+    //var __lang = new lang({" ":" "});
+
+    //var map_script = document.createElement('script');
+    //map_script.setAttribute("src","https://maps.googleapis.com/maps/api/js?key=AIzaSyAZOgm0tF2nezU2H4kKurkY7GkgWxqIMrU");
+    //map_script.setAttribute("async","");
+    //map_script.setAttribute("defer","");
+    //document.head.appendChild(map_script);
+
+
+    $(window).on('load',function() {
+        hashchanged();
+    });
+</script>
+
+
+
 </html>
