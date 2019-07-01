@@ -129,6 +129,26 @@
                 select_button.appendChild(op2);
                 button.appendChild(select_button);
 
+                //_______________________________ closing price
+
+                var closing_price_button = document.createElement("button");
+                closing_price_button.addEventListener('click', function () {
+                   // alert("hello peyman !!!");
+                    if(this.innerHTML.trim() == "قیمت پایانی") {
+                        this.innerHTML =   "آخرین قیمت";
+                        this.setAttribute("style", "background: green;color:#ffffff;height: 9vh;margin-left: 10px;border-radius: 10vh; background-image: linear-gradient(red, #eb4d2d, red);");
+
+                    }else{
+                        this.innerHTML =   "قیمت پایانی";
+                        this.setAttribute("style", "background: green;color:#ffffff;height: 9vh;margin-left: 10px;border-radius: 10vh; background-image: linear-gradient(green, #86c531, green);");
+                    }
+                });
+                closing_price_button.innerHTML="قیمت پایانی";
+                closing_price_button.setAttribute("style", "background: green;color:#ffffff;height: 9vh;margin-left: 10px;border-radius: 10vh; background-image: linear-gradient(green, #86c531, green);");
+                closing_price_button.setAttribute("type","button");
+                button.appendChild(closing_price_button);
+
+
             });
 
 

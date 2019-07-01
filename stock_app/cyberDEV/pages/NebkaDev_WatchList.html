@@ -1,147 +1,5 @@
 <psco_head>
-    /*
-    new TradingView.widget(
-    {
-    "autosize": true,
-    "symbol": "NASDAQ:AAPL",
-    "interval": "D",
-    "timezone": "Asia/Tehran",
-    "theme": "Light",
-    "style": "1",
-    "locale": "en",
-    "toolbar_bg": "#f1f3f6",
-    "enable_publishing": false,
-    "withdateranges": true,
-    "hide_side_toolbar": false,
-    "allow_symbol_change": true,
-    "watchlist": [
-    "CSE:APP",
-    "NASDAQ:MSFT",
-    "NASDAQ:MIME"
-    ],
-    "studies": [
-    "MACD@tv-basicstudies"
-    ],
-    "no_referral_id": true,
-    "container_id": "tradingview_927b7"
-    }
-    );
-    */
 
-    /////////////////////////////////////////
-    /*
-    var widget = new TradingView.widget(
-    {
-    //"autosize": true,
-    "width": window.innerWidth * 0.55,
-    "height": window.innerHeight* 0.8,
-    "symbol": "azari",
-    "interval": "D",
-    "timezone": "Asia/Tehran",
-    "theme": "Light",
-    "style": "1",
-    "locale": "fa_IR",
-    "toolbar_bg": "#f1f3f6",
-    "enable_publishing": false,
-    "allow_symbol_change": false,
-    "container_id": "tradingview_b0220",
-    datafeed: new Datafeeds.UDFCompatibleDatafeed("http://vip.tadbirgar.com/api/tradingview"),
-    "fullscreen": false,
-    "locale": "fa-IR",//getParameterByName('lang') || "fa",
-    "supported_resolutions": ["1D", "1W", "1M"],
-    "hide_side_toolbar": false,
-    "time_frames": [
-    {"text": "10y", "resolution": "6M"},
-    {"text": "1y", "resolution": "W"},
-    {"text": "6m", "resolution": "D"},
-    {"text": "1m", "resolution": "D"},
-    {"text": "7d", "resolution": "D"},
-    {"text": "1d", "resolution": "D"},
-    ],
-
-    // "watchlist": [
-    // "CSE:APP",
-    // "NASDAQ:MSFT",
-    // "NASDAQ:MIME"
-    // ],
-
-    "favorites": {
-    "intervals": ["D"]
-    // chartTypes: ["Area", "Line"]
-    }
-
-    ,
-    "enabled_features": ["saveload_requires_authentication", "use_localstorage_for_settings",
-    "show_dialog_on_snapshot_ready", "narrow_chart_enabled", "trading_options", "side_toolbar_in_fullscreen_mode",
-    "charts_auto_save"]
-    ,
-    "withdateranges": true
-    ,
-    "show_popup_button": true
-    ,
-    "popup_width": "1000"
-    ,
-    "popup_height": "650"
-    ,
-    "client_id": 'nahayatnegar.com'
-    });
-
-
-    function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-    results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-    }
-    */
-    /*
-    function initOnReady() {
-    //debugger;
-    var udf_datafeed =new Datafeeds.UDFCompatibleDatafeed("http://vip.tadbirgar.com/api/tradingview");
-    var widget = window.tvWidget = new TradingView.widget({
-    debug: true, // uncomment this line to see Library errors and warnings in the console
-    //fullscreen: true,
-    "width": window.innerWidth * 0.55,
-    "height": window.innerHeight* 0.8,
-    symbol: 'mahsa',
-    interval: 'D',
-    container_id: "tradingview_b0220",
-
-    "timezone": "Asia/Tehran",
-    //"theme": "Light",
-    "style": "1",
-    "locale": "fa_IR",
-    "toolbar_bg": "#f1f3f6",
-    "enable_publishing": false,
-    "allow_symbol_change": true,
-
-    "supported_resolutions": ["1D", "1W", "1M"],
-    "hide_side_toolbar": false,
-    "time_frames": [
-    {"text": "10y", "resolution": "6M"},
-    {"text": "1y", "resolution": "W"},
-    {"text": "6m", "resolution": "D"},
-    {"text": "1m", "resolution": "D"},
-    {"text": "7d", "resolution": "D"},
-    {"text": "1d", "resolution": "D"},
-    ],
-
-    "datafeed": udf_datafeed ,
-    library_path: "charting_library/",
-    locale: getParameterByName('lang') || "en",
-
-    disabled_features: ["use_localstorage_for_settings"],
-    enabled_features: ["study_templates"],
-    charts_storage_url: 'http://saveload.tradingview.com',
-    charts_storage_api_version: "1.1",
-    client_id: 'tradingview.com',
-    user_id: 'public_user_id',
-    theme: getParameterByName('theme')
-    });
-    };
-    initOnReady();
-
-    */
     //--------------- peyman test
     var test_elm = document.getElementById("test_peyman");
     var wiget_script = document.createElement("script");
@@ -379,6 +237,30 @@
                             <th>
                                 name
                             </th>
+                            <th>
+                                inscode
+                            </th>
+                            <th>
+                                flow
+                            </th>
+                            <th>
+                                PSGelStaMin
+                            </th>
+                            <th>
+                                PSGelStaMax
+                            </th>
+                            <th>
+                                PriceYesterday
+                            </th>
+                            <th>
+                                Min
+                            </th>
+                            <th>
+                                Max
+                            </th>
+                            <th>
+                                index
+                            </th>
                         </tr>
                         </thead>
                         <tbody>
@@ -451,27 +333,12 @@
                     <li><a href="#tab_null" data-toggle="tab">
                         Back Test
                     </a></li>
-                    <!--<li class="dropdown">-->
-                    <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#">-->
-                    <!--...-->
-                    <!--<span class="caret">-->
-                    <!--</span>-->
-                    <!--</a>-->
-                    <!--<ul class="dropdown-menu">-->
-                    <!--<li role="presentation"><a role="menuitem" tabindex="-1" href="#">منو ۱</a></li>-->
-                    <!--<li role="presentation"><a role="menuitem" tabindex="-1" href="#">منو ۲</a></li>-->
-                    <!--<li role="presentation"><a role="menuitem" tabindex="-1" href="#">منو ۳</a></li>-->
-                    <!--<li role="presentation" class="divider"></li>-->
-                    <!--<li role="presentation"><a role="menuitem" tabindex="-1" href="#">منو ۴</a></li>-->
-                    <!--</ul>-->
-                    <!--</li>-->
-                    <!--<li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>-->
                 </ul>
                 <div class="tab-content">
                     <!--tab_symbol-->
                     <div class="tab-pane active" id="tab_symbol">
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="box">
                                     <!--<div class="box-header">-->
                                     <!---->
@@ -524,107 +391,6 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody id="tbl_bestlimit">
-                                                <!--<tr>-->
-                                                <!--<td class="success">-->
-                                                <!--14-->
-                                                <!--</td>-->
-                                                <!--<td class="success">-->
-                                                <!--384,123-->
-                                                <!--</td>-->
-                                                <!--<td class="success">-->
-                                                <!--3,460-->
-                                                <!--</td>-->
-                                                <!--<td class="danger">-->
-                                                <!--3,460-->
-                                                <!--</td>-->
-                                                <!--<td class="danger">-->
-                                                <!--123,123-->
-                                                <!--</td>-->
-                                                <!--<td class="danger">-->
-                                                <!--2-->
-                                                <!--</td>-->
-                                                <!--</tr>-->
-                                                <!--<tr>-->
-                                                <!--<td class="success">-->
-                                                <!--14-->
-                                                <!--</td>-->
-                                                <!--<td class="success">-->
-                                                <!--384,123-->
-                                                <!--</td>-->
-                                                <!--<td class="success">-->
-                                                <!--3,460-->
-                                                <!--</td>-->
-                                                <!--<td class="danger">-->
-                                                <!--3,460-->
-                                                <!--</td>-->
-                                                <!--<td class="danger">-->
-                                                <!--123,123-->
-                                                <!--</td>-->
-                                                <!--<td class="danger">-->
-                                                <!--2-->
-                                                <!--</td>-->
-                                                <!--</tr>-->
-                                                <!--<tr>-->
-                                                <!--<td class="success">-->
-                                                <!--14-->
-                                                <!--</td>-->
-                                                <!--<td class="success">-->
-                                                <!--384,123-->
-                                                <!--</td>-->
-                                                <!--<td class="success">-->
-                                                <!--3,460-->
-                                                <!--</td>-->
-                                                <!--<td class="danger">-->
-                                                <!--3,460-->
-                                                <!--</td>-->
-                                                <!--<td class="danger">-->
-                                                <!--123,123-->
-                                                <!--</td>-->
-                                                <!--<td class="danger">-->
-                                                <!--2-->
-                                                <!--</td>-->
-                                                <!--</tr>-->
-                                                <!--<tr>-->
-                                                <!--<td class="success">-->
-                                                <!--14-->
-                                                <!--</td>-->
-                                                <!--<td class="success">-->
-                                                <!--384,123-->
-                                                <!--</td>-->
-                                                <!--<td class="success">-->
-                                                <!--3,460-->
-                                                <!--</td>-->
-                                                <!--<td class="danger">-->
-                                                <!--3,460-->
-                                                <!--</td>-->
-                                                <!--<td class="danger">-->
-                                                <!--123,123-->
-                                                <!--</td>-->
-                                                <!--<td class="danger">-->
-                                                <!--2-->
-                                                <!--</td>-->
-                                                <!--</tr>-->
-                                                <!--<tr>-->
-                                                <!--<td class="success">-->
-                                                <!--14-->
-                                                <!--</td>-->
-                                                <!--<td class="success">-->
-                                                <!--384,123-->
-                                                <!--</td>-->
-                                                <!--<td class="success">-->
-                                                <!--3,460-->
-                                                <!--</td>-->
-                                                <!--<td class="danger">-->
-                                                <!--3,460-->
-                                                <!--</td>-->
-                                                <!--<td class="danger">-->
-                                                <!--123,123-->
-                                                <!--</td>-->
-                                                <!--<td class="danger">-->
-                                                <!--2-->
-                                                <!--</td>-->
-                                                <!--</tr>-->
-
                                                 </tbody>
                                                 <tfoot>
 
@@ -632,45 +398,119 @@
                                             </table>
                                         </div>
                                         <div class="row col-md-12">
-                                            <div style="display: flex;flex-flow: column;margin-right: 34%;width: 1vw;height: 2vw;color: green;">
-                                                <span>12</span>
-                                                <i class="fa fa-arrow-down"></i>
-                                            </div>
-                                        </div>
-                                        <div class="row  col-md-12 text-center">
-                                            <div class="col-md-5"
-                                                 style="padding: 0;margin-left: 0;margin-right: 2vw;direction: ltr;display: flex;">
-                                                <div style="width: 60%;height: 0.5vw;background: green;;margin-top: 0.25vw;"></div>
-                                                <div style="width: 40%;height: 0.5vw;background: darkgray;margin-top: 0.25vw;"></div>
-                                            </div>
-                                            <div class="col-md-2" style="padding: 0;width:0.2vw;">
-                                                <div style="width: 0.2vw;height: 1vw;background: #000000;border-radius: 100%;"></div>
-                                            </div>
-                                            <div class="col-md-5" style="padding: 0;display: flex;">
-                                                <div style="width: 10%;height: 0.5vw;background: red ;margin-top: 0.25vw;"></div>
-                                                <div style="width: 90%;height: 0.5vw;background: darkgray ;margin-top: 0.25vw;"></div>
-                                            </div>
-                                        </div>
-                                        <div class="row  col-md-12 " style="margin-bottom: 5%;">
-                                            <div class="col-md-5"
-                                                 style="padding: 0;margin-left: 0;margin-right: 2vw;direction: rtl; text-align: right">
-                                                <div style="width: 100%;height: 0.5vw;margin-top: 0.25vw;">
-                                                    <i class="fa fa-sort-asc"></i>
-                                                    12
+
+                                            <div class="col-md-3" data-toggle="tooltip" title="درصد حجم معاملات مثبت">
+                                                <svg id="svg" xmlns="http://www.w3.org/2000/svg"
+                                                     xmlns:xlink="http://www.w3.org/1999/xlink" width="100%"
+                                                     height="100px" viewBox="0, 0, 400,400">
+                                                    <g id="svgg">
+                                                        <path id="path0"
+                                                              d="M118.500 60.008 C 115.273 60.337,111.752 60.826,110.676 61.094 C 107.022 62.006,106.439 62.162,105.134 62.583 C 102.723 63.360,101.244 63.990,96.651 66.194 C 94.137 67.401,91.496 68.550,90.783 68.748 C 88.731 69.318,67.552 69.225,62.742 68.625 C 57.240 67.939,51.406 67.995,47.596 68.770 C 41.642 69.981,37.331 71.186,36.993 71.733 C 36.755 72.117,35.116 72.828,32.437 73.708 C 31.361 74.061,30.187 74.484,29.829 74.648 C 29.040 75.009,25.728 75.851,24.042 76.119 C 22.704 76.332,22.537 76.621,23.358 77.303 C 24.214 78.014,34.556 78.108,40.750 77.460 C 54.998 75.971,58.293 76.234,59.760 78.976 C 60.619 80.582,60.408 86.770,59.408 89.324 C 59.021 90.310,58.561 91.703,58.385 92.421 C 57.626 95.510,57.436 96.139,56.889 97.379 C 56.177 98.994,55.288 99.530,52.160 100.231 C 47.310 101.317,46.761 101.458,45.477 101.940 C 42.133 103.194,36.661 102.464,31.350 100.056 C 28.701 98.855,28.589 98.981,30.319 101.224 C 36.479 109.209,38.269 109.713,56.825 108.691 L 60.348 108.497 60.282 114.151 C 60.246 117.260,60.029 121.418,59.801 123.390 C 58.315 136.245,58.953 141.014,62.456 143.224 C 70.424 148.250,72.728 148.740,76.500 146.210 L 78.687 144.743 82.457 144.741 C 90.952 144.735,92.061 144.406,96.007 140.722 C 102.922 134.265,110.396 137.723,119.144 151.426 C 119.830 152.502,120.724 153.896,121.130 154.523 C 122.078 155.992,124.857 161.060,124.860 161.327 C 124.861 161.440,125.369 162.876,125.989 164.519 C 127.020 167.252,127.745 170.027,128.777 175.182 C 129.166 177.128,129.297 194.271,128.939 196.349 C 128.840 196.922,128.539 199.446,128.270 201.956 C 128.001 204.466,127.633 207.620,127.452 208.965 C 126.744 214.239,126.719 215.320,127.266 217.200 C 128.354 220.943,130.962 222.413,137.216 222.809 C 141.698 223.093,142.168 223.284,143.499 225.358 C 144.714 227.252,147.918 229.464,150.903 230.469 C 151.965 230.827,153.251 231.288,153.760 231.493 C 155.709 232.278,156.045 232.390,157.968 232.895 C 159.055 233.181,160.327 233.415,160.794 233.415 C 161.703 233.415,165.347 234.247,166.422 234.701 C 166.781 234.852,167.749 235.215,168.574 235.508 C 169.398 235.800,170.645 236.529,171.345 237.128 C 174.845 240.124,177.381 240.424,179.946 238.147 C 183.845 234.684,189.211 236.785,196.053 244.454 C 197.697 246.297,205.388 252.642,206.916 253.417 C 207.838 253.884,208.685 254.416,208.798 254.599 C 210.695 257.668,211.889 248.550,210.768 239.558 C 209.588 230.098,208.674 228.780,201.750 226.555 C 198.215 225.419,196.876 224.841,193.154 222.844 C 188.323 220.251,186.414 214.664,188.192 208.313 C 188.468 207.327,188.868 204.906,189.081 202.934 C 189.862 195.717,191.678 194.657,198.196 197.616 C 204.341 200.405,214.757 202.771,220.891 202.771 C 230.725 202.771,234.684 205.907,246.206 222.820 C 247.061 224.075,248.271 225.835,248.896 226.732 C 249.521 227.628,250.217 228.644,250.444 228.989 C 252.106 231.519,257.437 236.898,260.969 239.609 C 265.560 243.132,266.319 244.499,265.743 248.201 C 265.228 251.508,260.650 261.104,259.580 261.119 C 259.358 261.122,258.829 261.676,258.404 262.349 C 257.470 263.829,255.363 265.778,253.891 266.525 C 250.893 268.047,247.306 271.729,245.957 274.668 C 245.335 276.025,243.526 278.512,242.487 279.440 C 242.068 279.814,241.538 279.934,240.820 279.818 C 239.553 279.612,238.120 280.748,237.806 282.205 C 237.697 282.714,237.398 283.721,237.141 284.444 C 236.616 285.924,236.521 290.044,236.995 290.791 C 238.002 292.378,257.787 290.180,260.541 288.174 C 261.027 287.820,261.512 287.531,261.620 287.531 C 262.128 287.531,264.287 285.475,264.778 284.524 C 266.339 281.500,266.426 281.014,266.668 274.002 C 266.990 264.685,267.821 262.733,272.488 260.331 C 274.935 259.072,281.864 253.776,284.032 251.508 C 288.365 246.975,288.384 244.866,284.167 236.838 C 281.890 232.501,282.678 226.178,285.579 225.521 C 289.212 224.699,292.418 226.586,296.985 232.236 C 299.653 235.538,302.082 237.851,303.656 238.591 C 307.839 240.557,313.956 242.341,319.120 243.099 C 322.346 243.573,322.249 243.126,322.249 257.505 L 322.249 269.813 321.390 270.929 C 320.341 272.293,319.277 273.306,316.635 275.456 C 312.432 278.877,309.499 285.514,310.807 288.644 C 311.386 290.029,312.056 290.333,315.091 290.585 C 316.339 290.689,318.460 290.920,319.804 291.098 C 325.927 291.910,331.664 292.182,332.996 291.724 C 335.684 290.799,336.893 287.143,335.781 283.295 C 334.804 279.913,335.440 278.167,338.290 276.405 C 341.459 274.447,341.163 271.477,337.627 269.764 C 334.834 268.410,333.843 264.588,334.963 259.495 C 335.957 254.977,335.440 245.670,333.832 239.120 C 333.656 238.403,333.508 236.009,333.504 233.801 C 333.495 228.998,333.539 229.096,329.066 223.934 C 328.510 223.291,327.721 222.045,327.314 221.163 C 326.906 220.281,326.432 219.287,326.260 218.953 C 325.916 218.286,325.467 216.136,324.990 212.877 C 324.820 211.711,324.552 203.790,324.396 195.273 C 324.105 179.394,323.378 171.873,321.795 168.378 C 321.633 168.020,321.336 167.286,321.135 166.748 C 320.933 166.210,319.413 164.377,317.756 162.673 C 312.061 156.818,309.806 152.043,311.946 150.367 C 312.606 149.850,320.369 150.112,324.205 150.781 C 325.640 151.032,327.327 151.299,327.954 151.375 C 329.146 151.521,332.703 152.213,336.593 153.057 C 350.715 156.120,358.808 154.884,366.830 148.439 C 371.385 144.779,372.866 142.887,381.643 129.514 C 387.439 120.683,387.684 118.089,384.150 103.015 C 383.708 101.133,383.194 98.995,383.008 98.264 C 381.780 93.448,383.050 86.608,385.978 82.269 C 387.096 80.614,387.253 79.743,386.390 79.986 C 386.076 80.075,385.306 80.246,384.678 80.367 C 379.600 81.344,375.398 84.322,370.682 90.288 C 369.335 91.992,366.748 96.928,366.748 97.794 C 366.748 98.134,366.618 98.493,366.459 98.592 C 365.560 99.147,365.124 108.300,365.712 114.262 C 366.303 120.253,366.660 121.339,369.189 124.847 C 374.313 131.956,363.775 143.013,348.174 146.897 C 344.031 147.928,341.430 147.728,334.637 145.856 C 333.562 145.559,332.315 145.250,331.866 145.168 C 331.418 145.087,330.758 144.896,330.399 144.744 C 330.041 144.592,328.867 144.223,327.791 143.924 C 326.716 143.625,325.249 143.191,324.531 142.959 C 323.265 142.549,320.499 141.763,318.174 141.152 C 315.206 140.372,313.411 140.224,309.153 140.406 C 302.838 140.676,303.250 140.853,297.470 135.367 C 293.487 131.586,293.513 131.605,290.399 130.126 C 283.578 126.887,281.774 126.339,271.883 124.499 C 270.896 124.316,269.343 123.954,268.431 123.696 C 267.519 123.438,266.596 123.227,266.380 123.227 C 265.332 123.227,256.897 118.512,255.909 117.374 C 255.819 117.270,255.232 116.770,254.605 116.262 C 253.024 114.982,247.031 109.028,242.543 104.280 C 240.481 102.098,237.154 98.868,235.149 97.101 C 233.145 95.335,230.570 92.973,229.426 91.851 C 226.404 88.888,222.411 85.363,220.538 84.005 C 219.641 83.354,217.734 81.988,216.300 80.968 C 212.218 78.065,211.190 77.321,209.617 76.131 C 208.810 75.521,207.563 74.611,206.846 74.109 C 206.129 73.608,205.216 72.861,204.817 72.451 C 198.707 66.161,186.365 62.449,167.726 61.296 C 164.857 61.118,162.070 60.890,161.532 60.787 C 160.994 60.685,158.207 60.464,155.338 60.296 C 152.469 60.128,148.142 59.849,145.721 59.675 C 138.577 59.163,125.175 59.327,118.500 60.008 M160.307 201.604 C 164.367 202.684,167.661 207.485,166.337 210.391 C 163.461 216.703,158.346 218.323,151.407 215.120 C 146.949 213.062,146.753 205.215,151.100 202.823 C 153.768 201.355,157.510 200.859,160.307 201.604 "
+                                                              stroke="none" fill="#1e9942" fill-rule="evenodd"></path>
+                                                    </g>
+                                                </svg>
+                                                <div style="position: absolute;float: right;top: 29%;left: 42%;color: white;font-size: 86%;">
+                                                    <b>%</b><span class="PressureMax">0</span>
                                                 </div>
                                             </div>
-                                            <div class="col-md-2" style="padding: 0;width: 1vw;">
-                                                <div style="width: 1vw;height: 1vw;">
-                                                    12
+                                            <div class="col-md-7" style="margin-right: -20px;padding: 0;">
+                                                <div style="height: 40px;">
+                                                    <!--<div style="display: flex;flex-flow: column;margin-right: 50%;width: 1vw;height: 2vw;color: green;">-->
+                                                    <!--<span id="PDrCotVal"></span>-->
+                                                    <!--<i class="fa fa-arrow-down"></i>-->
+                                                    <!--</div>-->
+                                                    <div id="MinPricePos" style="float: right;position: absolute;z-index: 1000;left: 57%;color: red;">
+                                                        <div style="display: flex;flex-flow: column;margin-right: 50%;width: 1vw;height: 2vw;">
+                                                            <span class="MinPrice"></span>
+                                                            <i class="fa fa-arrow-circle-down"
+                                                               style="font-size: 20px"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div id="MaxPricePos" style="float: right;position: absolute;z-index: 1000;left: 20%;color: green;">
+                                                        <div style="display: flex;flex-flow: column;margin-right: 50%;width: 1vw;height: 2vw;">
+                                                            <span class="MaxPrice"></span>
+                                                            <i class="fa fa-arrow-circle-down"
+                                                               style="font-size: 20px"></i>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div style="height: 10px;width: 100%;border: solid;border-width: 1px;overflow: hidden;padding: 0;">
+                                                    <div id="MinPriceBar" style="background: red;height: 8px;width: 34%;float: right;position: absolute;right: 50%;"></div>
+                                                    <div style="background: #9b9b9c;width: 2px;height: 20px;float: right;left: 49.5%;position: absolute;z-index: 10;"></div>
+                                                    <div id="MaxPriceBar" style="float: right;background: green;height: 8px;width: 23%;position: absolute;left: 50%;"></div>
+                                                </div>
+                                                <div style="height: 40px;">
+                                                    <div style="float: right;position: absolute;right: 0;">
+                                                        <div style="width: 100%;height: 0.5vw;margin-top: 0.25vw;">
+                                                            <i class="fa fa-sort-asc"></i>
+                                                            <span id="PSGelStaMax"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div style="float: right;position: absolute;left: 50%;margin-top: 10px">
+                                                        <div style="width: 1vw;height: 1vw;">
+                                                            <span class="PriceYesterday"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div style="float: right;position: absolute;left: 0;">
+                                                        <div style="width: 100%;height: 0.5vw;;margin-top: 0.25vw;">
+                                                            <span id="PSGelStaMin"></span>
+                                                            <i class="fa fa-sort-desc"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div id="PDrCotValPos" style="float: right;position: absolute;left: 19%; color: green;">
+                                                        <div style="display: flex;flex-flow: column;margin-right: 34%;width: 1vw;height: 2vw;">
+                                                            <i class="fa fa-arrow-up" style="font-size: 23px;"></i>
+                                                            <span id="PDrCotVal"></span>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-5" style="padding: 0; text-align: left; direction: ltr">
-                                                <div style="width: 100%;height: 0.5vw;;margin-top: 0.25vw;">
-                                                    <i class="fa fa-sort-desc"></i>
-                                                    12
+                                            <div class="col-md-2"  data-toggle="tooltip" title="درصد حجم معاملات منفی">
+                                                <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                                     width="100%" height="90px" viewBox="0 0 350 400"
+                                                     preserveAspectRatio="xMidYMid meet">
+                                                    <g transform="translate(0.000000,408.000000) scale(0.100000,-0.100000)"
+                                                       fill="#FF0000" stroke="none">
+                                                        <path d="M2310 3207 c-31 -29 -211 -98 -431 -166 -281 -86 -363 -128 -449
+                                                -231 -22 -27 -93 -135 -156 -242 -116 -193 -116 -193 -278 -355 -285 -284
+                                                -298 -313 -315 -688 -8 -202 -14 -221 -95 -344 -28 -42 -59 -108 -81 -176 -53
+                                                -157 -77 -191 -193 -268 -116 -78 -141 -108 -155 -192 -14 -84 -4 -106 65
+                                                -138 152 -70 349 -73 392 -5 8 13 5 23 -14 43 -31 33 -23 39 76 68 66 19 94
+                                                35 159 87 113 89 200 129 311 140 85 9 90 11 120 45 18 20 47 40 65 46 79 23
+                                                263 8 332 -28 39 -20 47 -49 47 -168 0 -137 5 -143 125 -158 137 -17 210 -15
+                                                234 7 12 11 21 26 21 34 0 25 -63 78 -115 97 -53 19 -85 47 -85 74 0 9 26 69
+                                                57 132 48 97 57 122 56 169 0 65 -24 124 -93 230 -60 91 -68 125 -45 174 17
+                                                35 167 186 186 186 5 0 9 6 9 14 0 20 58 40 115 40 58 -1 266 -49 447 -105 69
+                                                -21 133 -39 142 -39 25 0 56 41 56 74 0 50 -32 89 -111 136 -66 39 -108 74
+                                                -109 91 0 11 211 28 235 19 12 -5 49 -26 81 -47 55 -35 64 -38 134 -38 64 0
+                                                84 -5 139 -32 70 -35 103 -35 133 -2 28 33 4 73 -120 201 -141 145 -257 231
+                                                -428 314 -146 72 -209 119 -219 165 -4 17 -4 33 -2 36 3 3 30 -9 59 -25 50
+                                                -29 168 -78 215 -89 14 -3 25 1 32 15 11 21 -21 98 -88 210 -17 29 -31 55 -31
+                                                57 0 11 88 3 158 -14 43 -10 98 -21 124 -25 58 -7 66 4 75 97 8 87 -10 123
+                                                -84 168 -86 52 -127 93 -190 187 -67 102 -182 222 -210 222 -12 0 -27 -7 -34
+                                                -16 -19 -23 -172 -11 -211 17 -33 23 -28 24 -58 -4z"/>
+                                                    </g>
+                                                </svg>
+                                                <div style="position: absolute;float: right;top: 40%;left: 36%;color: white;font-size: 86%;">
+                                                    <b>%</b><span class="PressureMin">0</span>
                                                 </div>
                                             </div>
                                         </div>
+                                        <!--<div class="row  col-md-12 text-center">-->
+                                        <!--<div class="col-md-5"-->
+                                        <!--style="padding: 0;margin-left: 0;margin-right: 2vw;direction: ltr;display: flex;">-->
+                                        <!--<div style="width: 60%;height: 0.5vw;background: green;;margin-top: 0.25vw;"></div>-->
+                                        <!--<div style="width: 40%;height: 0.5vw;background: darkgray;margin-top: 0.25vw;"></div>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-md-2" style="padding: 0;width:0.2vw;">-->
+                                        <!--<div style="width: 0.2vw;height: 1vw;background: #000000;border-radius: 100%;"></div>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-md-5" style="padding: 0;display: flex;">-->
+                                        <!--<div style="width: 10%;height: 0.5vw;background: red ;margin-top: 0.25vw;"></div>-->
+                                        <!--<div style="width: 90%;height: 0.5vw;background: darkgray ;margin-top: 0.25vw;"></div>-->
+                                        <!--</div>-->
+                                        <!--</div>-->
                                         <div class="row  col-md-12">
                                             <div class="col-md-6">
                                                 <table class="table table-responsive table-striped table-hover text-center">
@@ -683,7 +523,7 @@
                                                             ق پایانی
                                                         </td>
                                                         <td>
-                                                            3,486
+                                                            <span class="ClosingPrice">-</span>
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -691,15 +531,15 @@
                                                             ق دیروز
                                                         </td>
                                                         <td>
-                                                            4,567
+                                                            <span class="PriceYesterday">-</span>
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            ق فردا
+بازه فردا
                                                         </td>
                                                         <td>
-                                                            654,566
+                                                            <span class="MaxPriceT"></span> - <span class="MinPriceT"></span>
                                                         </td>
                                                     </tr>
                                                     </tbody>
@@ -719,7 +559,7 @@
                                                             بازه روز
                                                         </td>
                                                         <td>
-                                                            3,486
+                                                            <span class="MaxPrice"></span> - <span class="MinPrice"></span>
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -727,7 +567,7 @@
                                                             بازه هفته
                                                         </td>
                                                         <td>
-                                                            4,567
+                                                            -
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -735,7 +575,7 @@
                                                             بازه سال
                                                         </td>
                                                         <td>
-                                                            654,566
+                                                            -
                                                         </td>
                                                     </tr>
                                                     </tbody>
@@ -748,13 +588,21 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-5">
+                            <div class="col-md-6">
                                 <div class="box">
                                     <div class="box-body">
-                                        <div class="row  col-xd-12">
+                                        <div class="row  col-md-12">
                                             <table class="table table-responsive table-active table-bordered col-md-12 text-center ">
                                                 <thead>
-
+                                                <tr>
+                                                    <th class="success" colspan="3">
+                                                        خرید
+                                                    </th>
+                                                    <th class="bg-info"></th>
+                                                    <th class="danger" colspan="3">
+                                                        فروش
+                                                    </th>
+                                                </tr>
                                                 </thead>
                                                 <tbody>
                                                 <tr>
@@ -812,13 +660,13 @@
                                             </table>
                                         </div>
                                         <div class="row  col-md-12">
-                                            <div class="col-md-6" style="margin-top: -3vh;">
+                                            <div class="col-md-6" style="/*margin-top: -3vh;*/">
                                                 <div id="chart_personal" style="height: 16vh"></div>
                                                 <h4 class="text-center">
                                                     حقیقی
                                                 </h4>
                                             </div>
-                                            <div class="col-md-6" style="margin-top: -3vh;">
+                                            <div class="col-md-6" style="/*margin-top: -3vh;*/">
                                                 <div id="chart_company" style="height: 16vh"></div>
                                                 <h4 class="text-center">
                                                     حقوقی
@@ -835,59 +683,62 @@
 
                                             </p>
                                         </div>
-                                        <div class="row  col-md-12">
-                                            <div class="col-md-2">
-                                                <h4 class="text-center" style="color: #64cb84">
-                                                    9%
-                                                </h4>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <svg id="svg" xmlns="http://www.w3.org/2000/svg"
-                                                     xmlns:xlink="http://www.w3.org/1999/xlink" width="100%"
-                                                     height="16vh" viewBox="0, 0, 400,400">
-                                                    <g id="svgg">
-                                                        <path id="path0"
-                                                              d="M118.500 60.008 C 115.273 60.337,111.752 60.826,110.676 61.094 C 107.022 62.006,106.439 62.162,105.134 62.583 C 102.723 63.360,101.244 63.990,96.651 66.194 C 94.137 67.401,91.496 68.550,90.783 68.748 C 88.731 69.318,67.552 69.225,62.742 68.625 C 57.240 67.939,51.406 67.995,47.596 68.770 C 41.642 69.981,37.331 71.186,36.993 71.733 C 36.755 72.117,35.116 72.828,32.437 73.708 C 31.361 74.061,30.187 74.484,29.829 74.648 C 29.040 75.009,25.728 75.851,24.042 76.119 C 22.704 76.332,22.537 76.621,23.358 77.303 C 24.214 78.014,34.556 78.108,40.750 77.460 C 54.998 75.971,58.293 76.234,59.760 78.976 C 60.619 80.582,60.408 86.770,59.408 89.324 C 59.021 90.310,58.561 91.703,58.385 92.421 C 57.626 95.510,57.436 96.139,56.889 97.379 C 56.177 98.994,55.288 99.530,52.160 100.231 C 47.310 101.317,46.761 101.458,45.477 101.940 C 42.133 103.194,36.661 102.464,31.350 100.056 C 28.701 98.855,28.589 98.981,30.319 101.224 C 36.479 109.209,38.269 109.713,56.825 108.691 L 60.348 108.497 60.282 114.151 C 60.246 117.260,60.029 121.418,59.801 123.390 C 58.315 136.245,58.953 141.014,62.456 143.224 C 70.424 148.250,72.728 148.740,76.500 146.210 L 78.687 144.743 82.457 144.741 C 90.952 144.735,92.061 144.406,96.007 140.722 C 102.922 134.265,110.396 137.723,119.144 151.426 C 119.830 152.502,120.724 153.896,121.130 154.523 C 122.078 155.992,124.857 161.060,124.860 161.327 C 124.861 161.440,125.369 162.876,125.989 164.519 C 127.020 167.252,127.745 170.027,128.777 175.182 C 129.166 177.128,129.297 194.271,128.939 196.349 C 128.840 196.922,128.539 199.446,128.270 201.956 C 128.001 204.466,127.633 207.620,127.452 208.965 C 126.744 214.239,126.719 215.320,127.266 217.200 C 128.354 220.943,130.962 222.413,137.216 222.809 C 141.698 223.093,142.168 223.284,143.499 225.358 C 144.714 227.252,147.918 229.464,150.903 230.469 C 151.965 230.827,153.251 231.288,153.760 231.493 C 155.709 232.278,156.045 232.390,157.968 232.895 C 159.055 233.181,160.327 233.415,160.794 233.415 C 161.703 233.415,165.347 234.247,166.422 234.701 C 166.781 234.852,167.749 235.215,168.574 235.508 C 169.398 235.800,170.645 236.529,171.345 237.128 C 174.845 240.124,177.381 240.424,179.946 238.147 C 183.845 234.684,189.211 236.785,196.053 244.454 C 197.697 246.297,205.388 252.642,206.916 253.417 C 207.838 253.884,208.685 254.416,208.798 254.599 C 210.695 257.668,211.889 248.550,210.768 239.558 C 209.588 230.098,208.674 228.780,201.750 226.555 C 198.215 225.419,196.876 224.841,193.154 222.844 C 188.323 220.251,186.414 214.664,188.192 208.313 C 188.468 207.327,188.868 204.906,189.081 202.934 C 189.862 195.717,191.678 194.657,198.196 197.616 C 204.341 200.405,214.757 202.771,220.891 202.771 C 230.725 202.771,234.684 205.907,246.206 222.820 C 247.061 224.075,248.271 225.835,248.896 226.732 C 249.521 227.628,250.217 228.644,250.444 228.989 C 252.106 231.519,257.437 236.898,260.969 239.609 C 265.560 243.132,266.319 244.499,265.743 248.201 C 265.228 251.508,260.650 261.104,259.580 261.119 C 259.358 261.122,258.829 261.676,258.404 262.349 C 257.470 263.829,255.363 265.778,253.891 266.525 C 250.893 268.047,247.306 271.729,245.957 274.668 C 245.335 276.025,243.526 278.512,242.487 279.440 C 242.068 279.814,241.538 279.934,240.820 279.818 C 239.553 279.612,238.120 280.748,237.806 282.205 C 237.697 282.714,237.398 283.721,237.141 284.444 C 236.616 285.924,236.521 290.044,236.995 290.791 C 238.002 292.378,257.787 290.180,260.541 288.174 C 261.027 287.820,261.512 287.531,261.620 287.531 C 262.128 287.531,264.287 285.475,264.778 284.524 C 266.339 281.500,266.426 281.014,266.668 274.002 C 266.990 264.685,267.821 262.733,272.488 260.331 C 274.935 259.072,281.864 253.776,284.032 251.508 C 288.365 246.975,288.384 244.866,284.167 236.838 C 281.890 232.501,282.678 226.178,285.579 225.521 C 289.212 224.699,292.418 226.586,296.985 232.236 C 299.653 235.538,302.082 237.851,303.656 238.591 C 307.839 240.557,313.956 242.341,319.120 243.099 C 322.346 243.573,322.249 243.126,322.249 257.505 L 322.249 269.813 321.390 270.929 C 320.341 272.293,319.277 273.306,316.635 275.456 C 312.432 278.877,309.499 285.514,310.807 288.644 C 311.386 290.029,312.056 290.333,315.091 290.585 C 316.339 290.689,318.460 290.920,319.804 291.098 C 325.927 291.910,331.664 292.182,332.996 291.724 C 335.684 290.799,336.893 287.143,335.781 283.295 C 334.804 279.913,335.440 278.167,338.290 276.405 C 341.459 274.447,341.163 271.477,337.627 269.764 C 334.834 268.410,333.843 264.588,334.963 259.495 C 335.957 254.977,335.440 245.670,333.832 239.120 C 333.656 238.403,333.508 236.009,333.504 233.801 C 333.495 228.998,333.539 229.096,329.066 223.934 C 328.510 223.291,327.721 222.045,327.314 221.163 C 326.906 220.281,326.432 219.287,326.260 218.953 C 325.916 218.286,325.467 216.136,324.990 212.877 C 324.820 211.711,324.552 203.790,324.396 195.273 C 324.105 179.394,323.378 171.873,321.795 168.378 C 321.633 168.020,321.336 167.286,321.135 166.748 C 320.933 166.210,319.413 164.377,317.756 162.673 C 312.061 156.818,309.806 152.043,311.946 150.367 C 312.606 149.850,320.369 150.112,324.205 150.781 C 325.640 151.032,327.327 151.299,327.954 151.375 C 329.146 151.521,332.703 152.213,336.593 153.057 C 350.715 156.120,358.808 154.884,366.830 148.439 C 371.385 144.779,372.866 142.887,381.643 129.514 C 387.439 120.683,387.684 118.089,384.150 103.015 C 383.708 101.133,383.194 98.995,383.008 98.264 C 381.780 93.448,383.050 86.608,385.978 82.269 C 387.096 80.614,387.253 79.743,386.390 79.986 C 386.076 80.075,385.306 80.246,384.678 80.367 C 379.600 81.344,375.398 84.322,370.682 90.288 C 369.335 91.992,366.748 96.928,366.748 97.794 C 366.748 98.134,366.618 98.493,366.459 98.592 C 365.560 99.147,365.124 108.300,365.712 114.262 C 366.303 120.253,366.660 121.339,369.189 124.847 C 374.313 131.956,363.775 143.013,348.174 146.897 C 344.031 147.928,341.430 147.728,334.637 145.856 C 333.562 145.559,332.315 145.250,331.866 145.168 C 331.418 145.087,330.758 144.896,330.399 144.744 C 330.041 144.592,328.867 144.223,327.791 143.924 C 326.716 143.625,325.249 143.191,324.531 142.959 C 323.265 142.549,320.499 141.763,318.174 141.152 C 315.206 140.372,313.411 140.224,309.153 140.406 C 302.838 140.676,303.250 140.853,297.470 135.367 C 293.487 131.586,293.513 131.605,290.399 130.126 C 283.578 126.887,281.774 126.339,271.883 124.499 C 270.896 124.316,269.343 123.954,268.431 123.696 C 267.519 123.438,266.596 123.227,266.380 123.227 C 265.332 123.227,256.897 118.512,255.909 117.374 C 255.819 117.270,255.232 116.770,254.605 116.262 C 253.024 114.982,247.031 109.028,242.543 104.280 C 240.481 102.098,237.154 98.868,235.149 97.101 C 233.145 95.335,230.570 92.973,229.426 91.851 C 226.404 88.888,222.411 85.363,220.538 84.005 C 219.641 83.354,217.734 81.988,216.300 80.968 C 212.218 78.065,211.190 77.321,209.617 76.131 C 208.810 75.521,207.563 74.611,206.846 74.109 C 206.129 73.608,205.216 72.861,204.817 72.451 C 198.707 66.161,186.365 62.449,167.726 61.296 C 164.857 61.118,162.070 60.890,161.532 60.787 C 160.994 60.685,158.207 60.464,155.338 60.296 C 152.469 60.128,148.142 59.849,145.721 59.675 C 138.577 59.163,125.175 59.327,118.500 60.008 M160.307 201.604 C 164.367 202.684,167.661 207.485,166.337 210.391 C 163.461 216.703,158.346 218.323,151.407 215.120 C 146.949 213.062,146.753 205.215,151.100 202.823 C 153.768 201.355,157.510 200.859,160.307 201.604 "
-                                                              stroke="none" fill="#64cb84" fill-rule="evenodd"></path>
-                                                        <!--<path id="path1"-->
-                                                        <!--d="M0.000 162.999 L 0.000 325.998 200.000 325.998 L 400.000 325.998 400.000 162.999 L 400.000 0.000 200.000 0.000 L 0.000 0.000 0.000 162.999 M145.721 59.675 C 148.142 59.849,152.469 60.128,155.338 60.296 C 158.207 60.464,160.994 60.685,161.532 60.787 C 162.070 60.890,164.857 61.118,167.726 61.296 C 186.365 62.449,198.707 66.161,204.817 72.451 C 205.216 72.861,206.129 73.608,206.846 74.109 C 207.563 74.611,208.810 75.521,209.617 76.131 C 211.190 77.321,212.218 78.065,216.300 80.968 C 217.734 81.988,219.641 83.354,220.538 84.005 C 222.411 85.363,226.404 88.888,229.426 91.851 C 230.570 92.973,233.145 95.335,235.149 97.101 C 237.154 98.868,240.481 102.098,242.543 104.280 C 247.031 109.028,253.024 114.982,254.605 116.262 C 255.232 116.770,255.819 117.270,255.909 117.374 C 256.897 118.512,265.332 123.227,266.380 123.227 C 266.596 123.227,267.519 123.438,268.431 123.696 C 269.343 123.954,270.896 124.316,271.883 124.499 C 281.774 126.339,283.578 126.887,290.399 130.126 C 293.513 131.605,293.487 131.586,297.470 135.367 C 303.250 140.853,302.838 140.676,309.153 140.406 C 313.411 140.224,315.206 140.372,318.174 141.152 C 320.499 141.763,323.265 142.549,324.531 142.959 C 325.249 143.191,326.716 143.625,327.791 143.924 C 328.867 144.223,330.041 144.592,330.399 144.744 C 330.758 144.896,331.418 145.087,331.866 145.168 C 332.315 145.250,333.562 145.559,334.637 145.856 C 341.430 147.728,344.031 147.928,348.174 146.897 C 363.775 143.013,374.313 131.956,369.189 124.847 C 366.660 121.339,366.303 120.253,365.712 114.262 C 365.124 108.300,365.560 99.147,366.459 98.592 C 366.618 98.493,366.748 98.134,366.748 97.794 C 366.748 96.928,369.335 91.992,370.682 90.288 C 375.398 84.322,379.600 81.344,384.678 80.367 C 385.306 80.246,386.076 80.075,386.390 79.986 C 387.253 79.743,387.096 80.614,385.978 82.269 C 383.050 86.608,381.780 93.448,383.008 98.264 C 387.840 117.208,387.706 120.276,381.643 129.514 C 372.866 142.887,371.385 144.779,366.830 148.439 C 358.808 154.884,350.715 156.120,336.593 153.057 C 332.703 152.213,329.146 151.521,327.954 151.375 C 327.327 151.299,325.640 151.032,324.205 150.781 C 320.369 150.112,312.606 149.850,311.946 150.367 C 309.806 152.043,312.061 156.818,317.756 162.673 C 319.413 164.377,320.933 166.210,321.135 166.748 C 321.336 167.286,321.633 168.020,321.795 168.378 C 323.378 171.873,324.105 179.394,324.396 195.273 C 324.552 203.790,324.820 211.711,324.990 212.877 C 325.467 216.136,325.916 218.286,326.260 218.953 C 326.432 219.287,326.906 220.281,327.314 221.163 C 327.721 222.045,328.510 223.291,329.066 223.934 C 333.539 229.096,333.495 228.998,333.504 233.801 C 333.508 236.009,333.656 238.403,333.832 239.120 C 335.440 245.670,335.957 254.977,334.963 259.495 C 333.843 264.588,334.834 268.410,337.627 269.764 C 341.163 271.477,341.459 274.447,338.290 276.405 C 335.440 278.167,334.804 279.913,335.781 283.295 C 336.893 287.143,335.684 290.799,332.996 291.724 C 331.664 292.182,325.927 291.910,319.804 291.098 C 318.460 290.920,316.339 290.689,315.091 290.585 C 312.056 290.333,311.386 290.029,310.807 288.644 C 309.499 285.514,312.432 278.877,316.635 275.456 C 319.277 273.306,320.341 272.293,321.390 270.929 L 322.249 269.813 322.249 257.505 C 322.249 243.126,322.346 243.573,319.120 243.099 C 313.956 242.341,307.839 240.557,303.656 238.591 C 302.082 237.851,299.653 235.538,296.985 232.236 C 292.418 226.586,289.212 224.699,285.579 225.521 C 282.678 226.178,281.890 232.501,284.167 236.838 C 288.384 244.866,288.365 246.975,284.032 251.508 C 281.864 253.776,274.935 259.072,272.488 260.331 C 267.821 262.733,266.990 264.685,266.668 274.002 C 266.426 281.014,266.339 281.500,264.778 284.524 C 264.287 285.475,262.128 287.531,261.620 287.531 C 261.512 287.531,261.027 287.820,260.541 288.174 C 257.787 290.180,238.002 292.378,236.995 290.791 C 236.521 290.044,236.616 285.924,237.141 284.444 C 237.398 283.721,237.697 282.714,237.806 282.205 C 238.120 280.748,239.553 279.612,240.820 279.818 C 241.538 279.934,242.068 279.814,242.487 279.440 C 243.526 278.512,245.335 276.025,245.957 274.668 C 247.306 271.729,250.893 268.047,253.891 266.525 C 255.363 265.778,257.470 263.829,258.404 262.349 C 258.829 261.676,259.358 261.122,259.580 261.119 C 260.650 261.104,265.228 251.508,265.743 248.201 C 266.319 244.499,265.560 243.132,260.969 239.609 C 257.437 236.898,252.106 231.519,250.444 228.989 C 250.217 228.644,249.521 227.628,248.896 226.732 C 248.271 225.835,247.061 224.075,246.206 222.820 C 234.684 205.907,230.725 202.771,220.891 202.771 C 214.757 202.771,204.341 200.405,198.196 197.616 C 191.678 194.657,189.862 195.717,189.081 202.934 C 188.868 204.906,188.468 207.327,188.192 208.313 C 186.414 214.664,188.323 220.251,193.154 222.844 C 196.876 224.841,198.215 225.419,201.750 226.555 C 208.674 228.780,209.588 230.098,210.768 239.558 C 211.889 248.550,210.695 257.668,208.798 254.599 C 208.685 254.416,207.838 253.884,206.916 253.417 C 205.388 252.642,197.697 246.297,196.053 244.454 C 189.211 236.785,183.845 234.684,179.946 238.147 C 177.381 240.424,174.845 240.124,171.345 237.128 C 170.645 236.529,169.398 235.800,168.574 235.508 C 167.749 235.215,166.781 234.852,166.422 234.701 C 165.347 234.247,161.703 233.415,160.794 233.415 C 160.327 233.415,159.055 233.181,157.968 232.895 C 156.045 232.390,155.709 232.278,153.760 231.493 C 153.251 231.288,151.965 230.827,150.903 230.469 C 147.918 229.464,144.714 227.252,143.499 225.358 C 142.168 223.284,141.698 223.093,137.216 222.809 C 130.962 222.413,128.354 220.943,127.266 217.200 C 126.719 215.320,126.744 214.239,127.452 208.965 C 127.633 207.620,128.001 204.466,128.270 201.956 C 128.539 199.446,128.840 196.922,128.939 196.349 C 129.297 194.271,129.166 177.128,128.777 175.182 C 127.745 170.027,127.020 167.252,125.989 164.519 C 125.369 162.876,124.861 161.440,124.860 161.327 C 124.857 161.060,122.078 155.992,121.130 154.523 C 120.724 153.896,119.830 152.502,119.144 151.426 C 110.396 137.723,102.922 134.265,96.007 140.722 C 92.061 144.406,90.952 144.735,82.457 144.741 L 78.687 144.743 76.500 146.210 C 72.728 148.740,70.424 148.250,62.456 143.224 C 58.953 141.014,58.315 136.245,59.801 123.390 C 60.029 121.418,60.246 117.260,60.282 114.151 L 60.348 108.497 56.825 108.691 C 38.269 109.713,36.479 109.209,30.319 101.224 C 28.589 98.981,28.701 98.855,31.350 100.056 C 36.661 102.464,42.133 103.194,45.477 101.940 C 46.761 101.458,47.310 101.317,52.160 100.231 C 55.288 99.530,56.177 98.994,56.889 97.379 C 57.436 96.139,57.626 95.510,58.385 92.421 C 58.561 91.703,59.021 90.310,59.408 89.324 C 60.408 86.770,60.619 80.582,59.760 78.976 C 58.293 76.234,54.998 75.971,40.750 77.460 C 34.556 78.108,24.214 78.014,23.358 77.303 C 22.537 76.621,22.704 76.332,24.042 76.119 C 25.728 75.851,29.040 75.009,29.829 74.648 C 30.187 74.484,31.361 74.061,32.437 73.708 C 35.116 72.828,36.755 72.117,36.993 71.733 C 37.331 71.186,41.642 69.981,47.596 68.770 C 51.406 67.995,57.240 67.939,62.742 68.625 C 67.552 69.225,88.731 69.318,90.783 68.748 C 91.496 68.550,94.137 67.401,96.651 66.194 C 101.244 63.990,102.723 63.360,105.134 62.583 C 106.439 62.162,107.022 62.006,110.676 61.094 C 116.491 59.644,134.888 58.899,145.721 59.675 M154.034 201.744 C 150.534 202.711,148.979 203.931,148.362 206.194 C 147.307 210.067,148.586 213.818,151.407 215.120 C 157.527 217.945,160.983 217.470,164.248 213.354 C 166.651 210.325,166.772 209.990,166.277 207.776 C 165.102 202.524,160.112 200.066,154.034 201.744 "-->
-                                                        <!--stroke="none" fill="#fbfbfb" fill-rule="evenodd"></path>-->
-                                                    </g>
-                                                </svg>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-                                                     width="100%" height="13vh" viewBox="0 0 350 400"
-                                                     preserveAspectRatio="xMidYMid meet">
-                                                    <g transform="translate(0.000000,408.000000) scale(0.100000,-0.100000)"
-                                                       fill="#FF0000" stroke="none">
-                                                        <path d="M2310 3207 c-31 -29 -211 -98 -431 -166 -281 -86 -363 -128 -449
--231 -22 -27 -93 -135 -156 -242 -116 -193 -116 -193 -278 -355 -285 -284
--298 -313 -315 -688 -8 -202 -14 -221 -95 -344 -28 -42 -59 -108 -81 -176 -53
--157 -77 -191 -193 -268 -116 -78 -141 -108 -155 -192 -14 -84 -4 -106 65
--138 152 -70 349 -73 392 -5 8 13 5 23 -14 43 -31 33 -23 39 76 68 66 19 94
-35 159 87 113 89 200 129 311 140 85 9 90 11 120 45 18 20 47 40 65 46 79 23
-263 8 332 -28 39 -20 47 -49 47 -168 0 -137 5 -143 125 -158 137 -17 210 -15
-234 7 12 11 21 26 21 34 0 25 -63 78 -115 97 -53 19 -85 47 -85 74 0 9 26 69
-57 132 48 97 57 122 56 169 0 65 -24 124 -93 230 -60 91 -68 125 -45 174 17
-35 167 186 186 186 5 0 9 6 9 14 0 20 58 40 115 40 58 -1 266 -49 447 -105 69
--21 133 -39 142 -39 25 0 56 41 56 74 0 50 -32 89 -111 136 -66 39 -108 74
--109 91 0 11 211 28 235 19 12 -5 49 -26 81 -47 55 -35 64 -38 134 -38 64 0
-84 -5 139 -32 70 -35 103 -35 133 -2 28 33 4 73 -120 201 -141 145 -257 231
--428 314 -146 72 -209 119 -219 165 -4 17 -4 33 -2 36 3 3 30 -9 59 -25 50
--29 168 -78 215 -89 14 -3 25 1 32 15 11 21 -21 98 -88 210 -17 29 -31 55 -31
-57 0 11 88 3 158 -14 43 -10 98 -21 124 -25 58 -7 66 4 75 97 8 87 -10 123
--84 168 -86 52 -127 93 -190 187 -67 102 -182 222 -210 222 -12 0 -27 -7 -34
--16 -19 -23 -172 -11 -211 17 -33 23 -28 24 -58 -4z"/>
-                                                    </g>
-                                                </svg>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <h4 class="text-center" style="color: #FF0000">
-                                                    4%
-                                                </h4>
-                                            </div>
-                                        </div>
+                                        <!--todo-->
+                                        <!--------------------- chart of the cow and bird-->
+
+                                        <!--<div class="row  col-md-12">-->
+                                        <!--<div class="col-md-2">-->
+                                        <!--<h4 class="text-center" style="color: #64cb84">-->
+                                        <!--9%-->
+                                        <!--</h4>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-md-4">-->
+                                        <!--<svg id="svg" xmlns="http://www.w3.org/2000/svg"-->
+                                        <!--xmlns:xlink="http://www.w3.org/1999/xlink" width="100%"-->
+                                        <!--height="16vh" viewBox="0, 0, 400,400">-->
+                                        <!--<g id="svgg">-->
+                                        <!--<path id="path0"-->
+                                        <!--d="M118.500 60.008 C 115.273 60.337,111.752 60.826,110.676 61.094 C 107.022 62.006,106.439 62.162,105.134 62.583 C 102.723 63.360,101.244 63.990,96.651 66.194 C 94.137 67.401,91.496 68.550,90.783 68.748 C 88.731 69.318,67.552 69.225,62.742 68.625 C 57.240 67.939,51.406 67.995,47.596 68.770 C 41.642 69.981,37.331 71.186,36.993 71.733 C 36.755 72.117,35.116 72.828,32.437 73.708 C 31.361 74.061,30.187 74.484,29.829 74.648 C 29.040 75.009,25.728 75.851,24.042 76.119 C 22.704 76.332,22.537 76.621,23.358 77.303 C 24.214 78.014,34.556 78.108,40.750 77.460 C 54.998 75.971,58.293 76.234,59.760 78.976 C 60.619 80.582,60.408 86.770,59.408 89.324 C 59.021 90.310,58.561 91.703,58.385 92.421 C 57.626 95.510,57.436 96.139,56.889 97.379 C 56.177 98.994,55.288 99.530,52.160 100.231 C 47.310 101.317,46.761 101.458,45.477 101.940 C 42.133 103.194,36.661 102.464,31.350 100.056 C 28.701 98.855,28.589 98.981,30.319 101.224 C 36.479 109.209,38.269 109.713,56.825 108.691 L 60.348 108.497 60.282 114.151 C 60.246 117.260,60.029 121.418,59.801 123.390 C 58.315 136.245,58.953 141.014,62.456 143.224 C 70.424 148.250,72.728 148.740,76.500 146.210 L 78.687 144.743 82.457 144.741 C 90.952 144.735,92.061 144.406,96.007 140.722 C 102.922 134.265,110.396 137.723,119.144 151.426 C 119.830 152.502,120.724 153.896,121.130 154.523 C 122.078 155.992,124.857 161.060,124.860 161.327 C 124.861 161.440,125.369 162.876,125.989 164.519 C 127.020 167.252,127.745 170.027,128.777 175.182 C 129.166 177.128,129.297 194.271,128.939 196.349 C 128.840 196.922,128.539 199.446,128.270 201.956 C 128.001 204.466,127.633 207.620,127.452 208.965 C 126.744 214.239,126.719 215.320,127.266 217.200 C 128.354 220.943,130.962 222.413,137.216 222.809 C 141.698 223.093,142.168 223.284,143.499 225.358 C 144.714 227.252,147.918 229.464,150.903 230.469 C 151.965 230.827,153.251 231.288,153.760 231.493 C 155.709 232.278,156.045 232.390,157.968 232.895 C 159.055 233.181,160.327 233.415,160.794 233.415 C 161.703 233.415,165.347 234.247,166.422 234.701 C 166.781 234.852,167.749 235.215,168.574 235.508 C 169.398 235.800,170.645 236.529,171.345 237.128 C 174.845 240.124,177.381 240.424,179.946 238.147 C 183.845 234.684,189.211 236.785,196.053 244.454 C 197.697 246.297,205.388 252.642,206.916 253.417 C 207.838 253.884,208.685 254.416,208.798 254.599 C 210.695 257.668,211.889 248.550,210.768 239.558 C 209.588 230.098,208.674 228.780,201.750 226.555 C 198.215 225.419,196.876 224.841,193.154 222.844 C 188.323 220.251,186.414 214.664,188.192 208.313 C 188.468 207.327,188.868 204.906,189.081 202.934 C 189.862 195.717,191.678 194.657,198.196 197.616 C 204.341 200.405,214.757 202.771,220.891 202.771 C 230.725 202.771,234.684 205.907,246.206 222.820 C 247.061 224.075,248.271 225.835,248.896 226.732 C 249.521 227.628,250.217 228.644,250.444 228.989 C 252.106 231.519,257.437 236.898,260.969 239.609 C 265.560 243.132,266.319 244.499,265.743 248.201 C 265.228 251.508,260.650 261.104,259.580 261.119 C 259.358 261.122,258.829 261.676,258.404 262.349 C 257.470 263.829,255.363 265.778,253.891 266.525 C 250.893 268.047,247.306 271.729,245.957 274.668 C 245.335 276.025,243.526 278.512,242.487 279.440 C 242.068 279.814,241.538 279.934,240.820 279.818 C 239.553 279.612,238.120 280.748,237.806 282.205 C 237.697 282.714,237.398 283.721,237.141 284.444 C 236.616 285.924,236.521 290.044,236.995 290.791 C 238.002 292.378,257.787 290.180,260.541 288.174 C 261.027 287.820,261.512 287.531,261.620 287.531 C 262.128 287.531,264.287 285.475,264.778 284.524 C 266.339 281.500,266.426 281.014,266.668 274.002 C 266.990 264.685,267.821 262.733,272.488 260.331 C 274.935 259.072,281.864 253.776,284.032 251.508 C 288.365 246.975,288.384 244.866,284.167 236.838 C 281.890 232.501,282.678 226.178,285.579 225.521 C 289.212 224.699,292.418 226.586,296.985 232.236 C 299.653 235.538,302.082 237.851,303.656 238.591 C 307.839 240.557,313.956 242.341,319.120 243.099 C 322.346 243.573,322.249 243.126,322.249 257.505 L 322.249 269.813 321.390 270.929 C 320.341 272.293,319.277 273.306,316.635 275.456 C 312.432 278.877,309.499 285.514,310.807 288.644 C 311.386 290.029,312.056 290.333,315.091 290.585 C 316.339 290.689,318.460 290.920,319.804 291.098 C 325.927 291.910,331.664 292.182,332.996 291.724 C 335.684 290.799,336.893 287.143,335.781 283.295 C 334.804 279.913,335.440 278.167,338.290 276.405 C 341.459 274.447,341.163 271.477,337.627 269.764 C 334.834 268.410,333.843 264.588,334.963 259.495 C 335.957 254.977,335.440 245.670,333.832 239.120 C 333.656 238.403,333.508 236.009,333.504 233.801 C 333.495 228.998,333.539 229.096,329.066 223.934 C 328.510 223.291,327.721 222.045,327.314 221.163 C 326.906 220.281,326.432 219.287,326.260 218.953 C 325.916 218.286,325.467 216.136,324.990 212.877 C 324.820 211.711,324.552 203.790,324.396 195.273 C 324.105 179.394,323.378 171.873,321.795 168.378 C 321.633 168.020,321.336 167.286,321.135 166.748 C 320.933 166.210,319.413 164.377,317.756 162.673 C 312.061 156.818,309.806 152.043,311.946 150.367 C 312.606 149.850,320.369 150.112,324.205 150.781 C 325.640 151.032,327.327 151.299,327.954 151.375 C 329.146 151.521,332.703 152.213,336.593 153.057 C 350.715 156.120,358.808 154.884,366.830 148.439 C 371.385 144.779,372.866 142.887,381.643 129.514 C 387.439 120.683,387.684 118.089,384.150 103.015 C 383.708 101.133,383.194 98.995,383.008 98.264 C 381.780 93.448,383.050 86.608,385.978 82.269 C 387.096 80.614,387.253 79.743,386.390 79.986 C 386.076 80.075,385.306 80.246,384.678 80.367 C 379.600 81.344,375.398 84.322,370.682 90.288 C 369.335 91.992,366.748 96.928,366.748 97.794 C 366.748 98.134,366.618 98.493,366.459 98.592 C 365.560 99.147,365.124 108.300,365.712 114.262 C 366.303 120.253,366.660 121.339,369.189 124.847 C 374.313 131.956,363.775 143.013,348.174 146.897 C 344.031 147.928,341.430 147.728,334.637 145.856 C 333.562 145.559,332.315 145.250,331.866 145.168 C 331.418 145.087,330.758 144.896,330.399 144.744 C 330.041 144.592,328.867 144.223,327.791 143.924 C 326.716 143.625,325.249 143.191,324.531 142.959 C 323.265 142.549,320.499 141.763,318.174 141.152 C 315.206 140.372,313.411 140.224,309.153 140.406 C 302.838 140.676,303.250 140.853,297.470 135.367 C 293.487 131.586,293.513 131.605,290.399 130.126 C 283.578 126.887,281.774 126.339,271.883 124.499 C 270.896 124.316,269.343 123.954,268.431 123.696 C 267.519 123.438,266.596 123.227,266.380 123.227 C 265.332 123.227,256.897 118.512,255.909 117.374 C 255.819 117.270,255.232 116.770,254.605 116.262 C 253.024 114.982,247.031 109.028,242.543 104.280 C 240.481 102.098,237.154 98.868,235.149 97.101 C 233.145 95.335,230.570 92.973,229.426 91.851 C 226.404 88.888,222.411 85.363,220.538 84.005 C 219.641 83.354,217.734 81.988,216.300 80.968 C 212.218 78.065,211.190 77.321,209.617 76.131 C 208.810 75.521,207.563 74.611,206.846 74.109 C 206.129 73.608,205.216 72.861,204.817 72.451 C 198.707 66.161,186.365 62.449,167.726 61.296 C 164.857 61.118,162.070 60.890,161.532 60.787 C 160.994 60.685,158.207 60.464,155.338 60.296 C 152.469 60.128,148.142 59.849,145.721 59.675 C 138.577 59.163,125.175 59.327,118.500 60.008 M160.307 201.604 C 164.367 202.684,167.661 207.485,166.337 210.391 C 163.461 216.703,158.346 218.323,151.407 215.120 C 146.949 213.062,146.753 205.215,151.100 202.823 C 153.768 201.355,157.510 200.859,160.307 201.604 "-->
+                                        <!--stroke="none" fill="#64cb84" fill-rule="evenodd"></path>-->
+                                        <!--&lt;!&ndash;<path id="path1"&ndash;&gt;-->
+                                        <!--&lt;!&ndash;d="M0.000 162.999 L 0.000 325.998 200.000 325.998 L 400.000 325.998 400.000 162.999 L 400.000 0.000 200.000 0.000 L 0.000 0.000 0.000 162.999 M145.721 59.675 C 148.142 59.849,152.469 60.128,155.338 60.296 C 158.207 60.464,160.994 60.685,161.532 60.787 C 162.070 60.890,164.857 61.118,167.726 61.296 C 186.365 62.449,198.707 66.161,204.817 72.451 C 205.216 72.861,206.129 73.608,206.846 74.109 C 207.563 74.611,208.810 75.521,209.617 76.131 C 211.190 77.321,212.218 78.065,216.300 80.968 C 217.734 81.988,219.641 83.354,220.538 84.005 C 222.411 85.363,226.404 88.888,229.426 91.851 C 230.570 92.973,233.145 95.335,235.149 97.101 C 237.154 98.868,240.481 102.098,242.543 104.280 C 247.031 109.028,253.024 114.982,254.605 116.262 C 255.232 116.770,255.819 117.270,255.909 117.374 C 256.897 118.512,265.332 123.227,266.380 123.227 C 266.596 123.227,267.519 123.438,268.431 123.696 C 269.343 123.954,270.896 124.316,271.883 124.499 C 281.774 126.339,283.578 126.887,290.399 130.126 C 293.513 131.605,293.487 131.586,297.470 135.367 C 303.250 140.853,302.838 140.676,309.153 140.406 C 313.411 140.224,315.206 140.372,318.174 141.152 C 320.499 141.763,323.265 142.549,324.531 142.959 C 325.249 143.191,326.716 143.625,327.791 143.924 C 328.867 144.223,330.041 144.592,330.399 144.744 C 330.758 144.896,331.418 145.087,331.866 145.168 C 332.315 145.250,333.562 145.559,334.637 145.856 C 341.430 147.728,344.031 147.928,348.174 146.897 C 363.775 143.013,374.313 131.956,369.189 124.847 C 366.660 121.339,366.303 120.253,365.712 114.262 C 365.124 108.300,365.560 99.147,366.459 98.592 C 366.618 98.493,366.748 98.134,366.748 97.794 C 366.748 96.928,369.335 91.992,370.682 90.288 C 375.398 84.322,379.600 81.344,384.678 80.367 C 385.306 80.246,386.076 80.075,386.390 79.986 C 387.253 79.743,387.096 80.614,385.978 82.269 C 383.050 86.608,381.780 93.448,383.008 98.264 C 387.840 117.208,387.706 120.276,381.643 129.514 C 372.866 142.887,371.385 144.779,366.830 148.439 C 358.808 154.884,350.715 156.120,336.593 153.057 C 332.703 152.213,329.146 151.521,327.954 151.375 C 327.327 151.299,325.640 151.032,324.205 150.781 C 320.369 150.112,312.606 149.850,311.946 150.367 C 309.806 152.043,312.061 156.818,317.756 162.673 C 319.413 164.377,320.933 166.210,321.135 166.748 C 321.336 167.286,321.633 168.020,321.795 168.378 C 323.378 171.873,324.105 179.394,324.396 195.273 C 324.552 203.790,324.820 211.711,324.990 212.877 C 325.467 216.136,325.916 218.286,326.260 218.953 C 326.432 219.287,326.906 220.281,327.314 221.163 C 327.721 222.045,328.510 223.291,329.066 223.934 C 333.539 229.096,333.495 228.998,333.504 233.801 C 333.508 236.009,333.656 238.403,333.832 239.120 C 335.440 245.670,335.957 254.977,334.963 259.495 C 333.843 264.588,334.834 268.410,337.627 269.764 C 341.163 271.477,341.459 274.447,338.290 276.405 C 335.440 278.167,334.804 279.913,335.781 283.295 C 336.893 287.143,335.684 290.799,332.996 291.724 C 331.664 292.182,325.927 291.910,319.804 291.098 C 318.460 290.920,316.339 290.689,315.091 290.585 C 312.056 290.333,311.386 290.029,310.807 288.644 C 309.499 285.514,312.432 278.877,316.635 275.456 C 319.277 273.306,320.341 272.293,321.390 270.929 L 322.249 269.813 322.249 257.505 C 322.249 243.126,322.346 243.573,319.120 243.099 C 313.956 242.341,307.839 240.557,303.656 238.591 C 302.082 237.851,299.653 235.538,296.985 232.236 C 292.418 226.586,289.212 224.699,285.579 225.521 C 282.678 226.178,281.890 232.501,284.167 236.838 C 288.384 244.866,288.365 246.975,284.032 251.508 C 281.864 253.776,274.935 259.072,272.488 260.331 C 267.821 262.733,266.990 264.685,266.668 274.002 C 266.426 281.014,266.339 281.500,264.778 284.524 C 264.287 285.475,262.128 287.531,261.620 287.531 C 261.512 287.531,261.027 287.820,260.541 288.174 C 257.787 290.180,238.002 292.378,236.995 290.791 C 236.521 290.044,236.616 285.924,237.141 284.444 C 237.398 283.721,237.697 282.714,237.806 282.205 C 238.120 280.748,239.553 279.612,240.820 279.818 C 241.538 279.934,242.068 279.814,242.487 279.440 C 243.526 278.512,245.335 276.025,245.957 274.668 C 247.306 271.729,250.893 268.047,253.891 266.525 C 255.363 265.778,257.470 263.829,258.404 262.349 C 258.829 261.676,259.358 261.122,259.580 261.119 C 260.650 261.104,265.228 251.508,265.743 248.201 C 266.319 244.499,265.560 243.132,260.969 239.609 C 257.437 236.898,252.106 231.519,250.444 228.989 C 250.217 228.644,249.521 227.628,248.896 226.732 C 248.271 225.835,247.061 224.075,246.206 222.820 C 234.684 205.907,230.725 202.771,220.891 202.771 C 214.757 202.771,204.341 200.405,198.196 197.616 C 191.678 194.657,189.862 195.717,189.081 202.934 C 188.868 204.906,188.468 207.327,188.192 208.313 C 186.414 214.664,188.323 220.251,193.154 222.844 C 196.876 224.841,198.215 225.419,201.750 226.555 C 208.674 228.780,209.588 230.098,210.768 239.558 C 211.889 248.550,210.695 257.668,208.798 254.599 C 208.685 254.416,207.838 253.884,206.916 253.417 C 205.388 252.642,197.697 246.297,196.053 244.454 C 189.211 236.785,183.845 234.684,179.946 238.147 C 177.381 240.424,174.845 240.124,171.345 237.128 C 170.645 236.529,169.398 235.800,168.574 235.508 C 167.749 235.215,166.781 234.852,166.422 234.701 C 165.347 234.247,161.703 233.415,160.794 233.415 C 160.327 233.415,159.055 233.181,157.968 232.895 C 156.045 232.390,155.709 232.278,153.760 231.493 C 153.251 231.288,151.965 230.827,150.903 230.469 C 147.918 229.464,144.714 227.252,143.499 225.358 C 142.168 223.284,141.698 223.093,137.216 222.809 C 130.962 222.413,128.354 220.943,127.266 217.200 C 126.719 215.320,126.744 214.239,127.452 208.965 C 127.633 207.620,128.001 204.466,128.270 201.956 C 128.539 199.446,128.840 196.922,128.939 196.349 C 129.297 194.271,129.166 177.128,128.777 175.182 C 127.745 170.027,127.020 167.252,125.989 164.519 C 125.369 162.876,124.861 161.440,124.860 161.327 C 124.857 161.060,122.078 155.992,121.130 154.523 C 120.724 153.896,119.830 152.502,119.144 151.426 C 110.396 137.723,102.922 134.265,96.007 140.722 C 92.061 144.406,90.952 144.735,82.457 144.741 L 78.687 144.743 76.500 146.210 C 72.728 148.740,70.424 148.250,62.456 143.224 C 58.953 141.014,58.315 136.245,59.801 123.390 C 60.029 121.418,60.246 117.260,60.282 114.151 L 60.348 108.497 56.825 108.691 C 38.269 109.713,36.479 109.209,30.319 101.224 C 28.589 98.981,28.701 98.855,31.350 100.056 C 36.661 102.464,42.133 103.194,45.477 101.940 C 46.761 101.458,47.310 101.317,52.160 100.231 C 55.288 99.530,56.177 98.994,56.889 97.379 C 57.436 96.139,57.626 95.510,58.385 92.421 C 58.561 91.703,59.021 90.310,59.408 89.324 C 60.408 86.770,60.619 80.582,59.760 78.976 C 58.293 76.234,54.998 75.971,40.750 77.460 C 34.556 78.108,24.214 78.014,23.358 77.303 C 22.537 76.621,22.704 76.332,24.042 76.119 C 25.728 75.851,29.040 75.009,29.829 74.648 C 30.187 74.484,31.361 74.061,32.437 73.708 C 35.116 72.828,36.755 72.117,36.993 71.733 C 37.331 71.186,41.642 69.981,47.596 68.770 C 51.406 67.995,57.240 67.939,62.742 68.625 C 67.552 69.225,88.731 69.318,90.783 68.748 C 91.496 68.550,94.137 67.401,96.651 66.194 C 101.244 63.990,102.723 63.360,105.134 62.583 C 106.439 62.162,107.022 62.006,110.676 61.094 C 116.491 59.644,134.888 58.899,145.721 59.675 M154.034 201.744 C 150.534 202.711,148.979 203.931,148.362 206.194 C 147.307 210.067,148.586 213.818,151.407 215.120 C 157.527 217.945,160.983 217.470,164.248 213.354 C 166.651 210.325,166.772 209.990,166.277 207.776 C 165.102 202.524,160.112 200.066,154.034 201.744 "&ndash;&gt;-->
+                                        <!--&lt;!&ndash;stroke="none" fill="#fbfbfb" fill-rule="evenodd"></path>&ndash;&gt;-->
+                                        <!--</g>-->
+                                        <!--</svg>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-md-4">-->
+                                        <!--<svg version="1.0" xmlns="http://www.w3.org/2000/svg"-->
+                                        <!--width="100%" height="13vh" viewBox="0 0 350 400"-->
+                                        <!--preserveAspectRatio="xMidYMid meet">-->
+                                        <!--<g transform="translate(0.000000,408.000000) scale(0.100000,-0.100000)"-->
+                                        <!--fill="#FF0000" stroke="none">-->
+                                        <!--<path d="M2310 3207 c-31 -29 -211 -98 -431 -166 -281 -86 -363 -128 -449-->
+                                        <!---231 -22 -27 -93 -135 -156 -242 -116 -193 -116 -193 -278 -355 -285 -284-->
+                                        <!---298 -313 -315 -688 -8 -202 -14 -221 -95 -344 -28 -42 -59 -108 -81 -176 -53-->
+                                        <!---157 -77 -191 -193 -268 -116 -78 -141 -108 -155 -192 -14 -84 -4 -106 65-->
+                                        <!---138 152 -70 349 -73 392 -5 8 13 5 23 -14 43 -31 33 -23 39 76 68 66 19 94-->
+                                        <!--35 159 87 113 89 200 129 311 140 85 9 90 11 120 45 18 20 47 40 65 46 79 23-->
+                                        <!--263 8 332 -28 39 -20 47 -49 47 -168 0 -137 5 -143 125 -158 137 -17 210 -15-->
+                                        <!--234 7 12 11 21 26 21 34 0 25 -63 78 -115 97 -53 19 -85 47 -85 74 0 9 26 69-->
+                                        <!--57 132 48 97 57 122 56 169 0 65 -24 124 -93 230 -60 91 -68 125 -45 174 17-->
+                                        <!--35 167 186 186 186 5 0 9 6 9 14 0 20 58 40 115 40 58 -1 266 -49 447 -105 69-->
+                                        <!---21 133 -39 142 -39 25 0 56 41 56 74 0 50 -32 89 -111 136 -66 39 -108 74-->
+                                        <!---109 91 0 11 211 28 235 19 12 -5 49 -26 81 -47 55 -35 64 -38 134 -38 64 0-->
+                                        <!--84 -5 139 -32 70 -35 103 -35 133 -2 28 33 4 73 -120 201 -141 145 -257 231-->
+                                        <!---428 314 -146 72 -209 119 -219 165 -4 17 -4 33 -2 36 3 3 30 -9 59 -25 50-->
+                                        <!---29 168 -78 215 -89 14 -3 25 1 32 15 11 21 -21 98 -88 210 -17 29 -31 55 -31-->
+                                        <!--57 0 11 88 3 158 -14 43 -10 98 -21 124 -25 58 -7 66 4 75 97 8 87 -10 123-->
+                                        <!---84 168 -86 52 -127 93 -190 187 -67 102 -182 222 -210 222 -12 0 -27 -7 -34-->
+                                        <!---16 -19 -23 -172 -11 -211 17 -33 23 -28 24 -58 -4z"/>-->
+                                        <!--</g>-->
+                                        <!--</svg>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-md-2">-->
+                                        <!--<h4 class="text-center" style="color: #FF0000">-->
+                                        <!--4%-->
+                                        <!--</h4>-->
+                                        <!--</div>-->
+                                        <!--</div>-->
                                     </div>
                                 </div>
                             </div>
