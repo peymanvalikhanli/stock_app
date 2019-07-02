@@ -78,76 +78,80 @@
 
                 //pricescale:1
                 //____________________________________
-
             });
 
             widget.headerReady().then(function () {
-                var param = {};
+                var param = {
+                    act: 'adj'
+                };
 
-                //window.select_adj_price = true ;
-//                function aa(){
-//                    alert("hi");
-//                }
                 var button = widget.createButton();
-                var select_button = document.createElement("select");
-                var op1 = document.createElement("option");
-                var op2 = document.createElement("option");
-
+                var select_button = document.createElement("button");
+                window.psco = {};
                 $.post("http://vip.tadbirgar.com/api/tradingview/history/getmode.php", param, function (result) {
                     if (result.trim() == "no" || result.trim() == "") {
-                        select_button.setAttribute("style", "background: red;color:#ffffff;height: 9vh;");
-                        op2.setAttribute("selected", "");
+//                        select_button.setAttribute("style", "background: red;color:#ffffff;height: 9vh;");
+                        select_button.setAttribute("style", "background: red;color:#ffffff;height: 30px;margin-left: 10px;border-radius: 10vh; background-image: linear-gradient(red, #eb4d2d, red);");
+                        select_button.innerHTML = 'تعدیل نشده';
+                        window.psco.adj = false;
                     } else {
-                        select_button.setAttribute("style", "background: green;color:#ffffff;height: 9vh;");
-                        op1.setAttribute("selected", "");
+//                        select_button.setAttribute("style", "background: green;color:#ffffff;height: 9vh;");
+                        select_button.setAttribute("style", "background: green;color:#ffffff;height: 30px;margin-left: 10px;border-radius: 10vh; background-image: linear-gradient(green, #86c531, green);");
+                        select_button.innerHTML = 'تعدیل شده';
+                        window.psco.adj = true;
                     }
                 });
-                //select_button.setAttribute("value",select_value);
-
                 select_button.setAttribute("id", "select_adj_price");
-//               select_button.setAttribute("onchange","aa()");
-                select_button.addEventListener('change', function () {
-                    var value = this.options[this.selectedIndex].value;
-                    console.log(value);
-                    console.log(this);
-                    if (value.trim() == "notAdj") {
-                        this.setAttribute("style", "background: red;color:#ffffff;height: 9vh;");
+                select_button.addEventListener('click', function () {
+                    if (window.psco.adj) {
+//                        this.setAttribute("style", "background: red;color:#ffffff;height: 9vh;");
+                        this.setAttribute("style", "background: red;color:#ffffff;height: 30px;margin-left: 10px;border-radius: 10vh; background-image: linear-gradient(red, #eb4d2d, red);");
+
                         set_adj_price(true);
                     } else {
-                        this.setAttribute("style", "background: green;color:#ffffff;height: 9vh;");
+//                        this.setAttribute("style", "background: green;color:#ffffff;height: 9vh;");
+                        this.setAttribute("style", "background: green;color:#ffffff;height: 30px;margin-left: 10px;border-radius: 10vh; background-image: linear-gradient(green, #86c531, green);");
                         set_adj_price(false);
                     }
+                    window.psco.adj = !window.psco.adj;
                     location.reload();
                 });
-                op1.setAttribute("style", "background: green;color:#ffffff;height: 9vh;");
-                op1.setAttribute("value", "adj");
-                op2.setAttribute("style", "background: red;color:#ffffff;height: 9vh;");
-                op2.setAttribute("value", "notAdj");
-                op1.innerHTML = 'تعدیل شده';
-                op2.innerHTML = 'تعدیل نشده';
-                select_button.appendChild(op1);
-                select_button.appendChild(op2);
                 button.appendChild(select_button);
 
                 //_______________________________ closing price
 
                 var closing_price_button = document.createElement("button");
-                closing_price_button.addEventListener('click', function () {
-                   // alert("hello peyman !!!");
-                    if(this.innerHTML.trim() == "قیمت پایانی") {
-                        this.innerHTML =   "آخرین قیمت";
-                        this.setAttribute("style", "background: green;color:#ffffff;height: 9vh;margin-left: 10px;border-radius: 10vh; background-image: linear-gradient(red, #eb4d2d, red);");
-
-                    }else{
-                        this.innerHTML =   "قیمت پایانی";
-                        this.setAttribute("style", "background: green;color:#ffffff;height: 9vh;margin-left: 10px;border-radius: 10vh; background-image: linear-gradient(green, #86c531, green);");
+                param = {
+                    act: 'closing'
+                };
+                $.post("http://vip.tadbirgar.com/api/tradingview/history/getmode.php", param, function (result) {
+                    if (result.trim() == "no" || result.trim() == "") {
+                        closing_price_button.innerHTML = "آخرین قیمت";
+                        closing_price_button.setAttribute("style", "background: green;color:#ffffff;height: 30px;margin-left: 10px;border-radius: 10vh; background-image: linear-gradient(red, #eb4d2d, red);");
+                        window.psco.closing = false;
+                    } else {
+                        closing_price_button.innerHTML = "قیمت پایانی";
+                        closing_price_button.setAttribute("style", "background: green;color:#ffffff;height: 30px;margin-left: 10px;border-radius: 10vh; background-image: linear-gradient(green, #86c531, green);");
+                        window.psco.closing = true;
                     }
                 });
-                closing_price_button.innerHTML="قیمت پایانی";
-                closing_price_button.setAttribute("style", "background: green;color:#ffffff;height: 9vh;margin-left: 10px;border-radius: 10vh; background-image: linear-gradient(green, #86c531, green);");
-                closing_price_button.setAttribute("type","button");
+                closing_price_button.addEventListener('click', function () {
+                    // alert("hello peyman !!!");
+                    if (this.innerHTML.trim() == "قیمت پایانی") {
+                        this.innerHTML = "آخرین قیمت";
+                        this.setAttribute("style", "background: green;color:#ffffff;height: 30px;margin-left: 10px;border-radius: 10vh; background-image: linear-gradient(red, #eb4d2d, red);");
+                        set_closing_price(false);
+                    } else {
+                        this.innerHTML = "قیمت پایانی";
+                        this.setAttribute("style", "background: green;color:#ffffff;height: 30px;margin-left: 10px;border-radius: 10vh; background-image: linear-gradient(green, #86c531, green);");
+                        set_closing_price(true);
+                    }
+                    location.reload();
+                });
+                closing_price_button.innerHTML = "قیمت پایانی";
+                closing_price_button.setAttribute("style", "background: green;color:#ffffff;height: 30px;margin-left: 10px;border-radius: 10vh; background-image: linear-gradient(green, #86c531, green);");
+                closing_price_button.setAttribute("type", "button");
                 button.appendChild(closing_price_button);
-
 
             });
 
@@ -157,15 +161,33 @@
         window.addEventListener('DOMContentLoaded', initOnReady, false);
 
         function set_adj_price(is_no_adj) {
-            var param = {};
+            var param = {
+                act: 'adj'
+            };
             if (is_no_adj) {
-                param = {use_adj: 1};
+                param = {
+                    act: 'adj',
+                    use_adj: 1
+                };
             }
             $.post("http://vip.tadbirgar.com/api/tradingview/history/setmode.php", param, function (result) {
                 console.log(result);
             });
         }
-        // set_adj_price(false);
+        function set_closing_price(use_closing) {
+            var param = {
+                act: 'closing'
+            };
+            if (use_closing) {
+                param = {
+                    act: 'closing',
+                    use_closing: 1
+                };
+            }
+            $.post("http://vip.tadbirgar.com/api/tradingview/history/setmode.php", param, function (result) {
+                console.log(result);
+            });
+        }
 
     </script>
 
@@ -178,8 +200,8 @@
 <script type="text/javascript">
 
 
-    function hashchanged(){
-        var hash = location.hash.replace( /^#/, '' );
+    function hashchanged() {
+        var hash = location.hash.replace(/^#/, '');
         //your code
         console.log(decodeURIComponent(hash));
 //        var end_page_name = hash.indexOf("?");
@@ -190,10 +212,11 @@
 //            file = "cyberDEV/pages/" + "index.html";
 //        }
 
-        window.tvWidget.setSymbol(decodeURIComponent(hash),'D',function(){})
+        window.tvWidget.setSymbol(decodeURIComponent(hash), 'D', function () {
+        })
 
-      //  includeHTML(file,elemnt);
-       // console.log()
+        //  includeHTML(file,elemnt);
+        // console.log()
     }
 
     function getParameterByName(name, url) {
@@ -206,7 +229,7 @@
         return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
 
-    $(window).on('hashchange', function(){
+    $(window).on('hashchange', function () {
         hashchanged();
     }).trigger('hashchanged'); // bind event to the same selector as event-listener
 
@@ -219,11 +242,10 @@
     //document.head.appendChild(map_script);
 
 
-    $(window).on('load',function() {
+    $(window).on('load', function () {
         hashchanged();
     });
 </script>
-
 
 
 </html>
