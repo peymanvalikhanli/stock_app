@@ -1,5 +1,4 @@
 <psco_head>
-
     //--------------- peyman test
     var test_elm = document.getElementById("test_peyman");
     var wiget_script = document.createElement("script");
@@ -120,9 +119,45 @@
     var frm_chr_history = document.getElementById("frm_chr_history");
     frm_chr_history.style.display="block";
     Trade_connection.tbl_history.columns.adjust().draw();
+
+    var frm_chr_his = document.getElementById("frm_chr_his");
+    frm_chr_his.style.display="none";
+
+    var elm = document.getElementById("btn_tbl_history");
+    elm.style.borderTopWidth= "3px";
+    elm.style.borderTopColor = "blueviolet";
+
+    var elm1 = document.getElementById("chr_tbl_history");
+    elm1.style.borderTopWidth= "1px";
+    elm1.style.borderTopColor = "gainsboro";
+
+
+    }
+
+    function chr_history_click(){
+    var tbl_history = document.getElementById("frm_tbl_history");
+    tbl_history.style.display="none";
+    var frm_chr_history = document.getElementById("frm_chr_history");
+    frm_chr_history.style.display="none";
+    Trade_connection.tbl_history.columns.adjust().draw();
+
+    var frm_chr_his = document.getElementById("frm_chr_his");
+    frm_chr_his.style.display="block";
+
+    var elm = document.getElementById("chr_tbl_history");
+    elm.style.borderTopWidth= "3px";
+    elm.style.borderTopColor = "blueviolet";
+
+    var elm1 = document.getElementById("btn_tbl_history");
+    elm1.style.borderTopWidth= "1px";
+    elm1.style.borderTopColor = "gainsboro";
+
+
     }
 
     Trade_connection.init_tbl_history();
+
+    TseMsg_connection.ini_tbl_symbole();
 
 </psco_head>
 <psco_body>
@@ -316,36 +351,51 @@
             <div class="nav-tabs-custom" style="min-height: 250px;">
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="#tab_symbol" data-toggle="tab">
+                        <i class="fa fa-object-group" style="color: #22d717"></i>
                         اطلاعات نماد
                     </a></li>
                     <li><a href="#tab_history" data-toggle="tab">
+                        <i class="fa fa-history" style="color: #129bd3"></i>
                         سابقه معاملات
                     </a></li>
                     <li><a href="#tab_Coefficients" data-toggle="tab">
+                        <i class="fa fa-tasks" style="color: #ee1010"></i>
                         ضرایب
                     </a></li>
+                    <li><a href="#tab_Coefficients" data-toggle="tab">
+                        <i class="fa fa-calculator" style="color: #14cdac"></i>
+                        نسبت ها
+                    </a></li>
                     <li><a href="#tab_message" data-toggle="tab">
+                        <i class="fa fa-bullhorn" style="color: #c005f8"></i>
                         پیام ناظر
                     </a></li>
                     <li><a href="#tab_codal" data-toggle="tab">
+                        <i class="fa fa-bookmark" style="color: #1aa8a4"></i>
                         کدال
                     </a></li>
                     <li><a href="#tab_null" data-toggle="tab">
+                        <i class="fa fa-twitter-square" style="color: #49aae1"></i>
                         توئیت
                     </a></li>
                     <li><a href="#tab_news" data-toggle="tab">
+                        <i class="fa fa-newspaper-o" style="color: #7678e8"></i>
                         اخبار
                     </a></li>
                     <li><a href="#tab_null" data-toggle="tab">
+                        <i class="fa fa-bell" style="color: #fc0202"></i>
                         هشدار
                     </a></li>
                     <li><a href="#tab_note" data-toggle="tab">
+                        <i class="fa fa-comment" style="color: #4130534"></i>
                         یادداشت
                     </a></li>
                     <li><a href="#tab_indicators" data-toggle="tab">
+                        <i class="fa fa-sellsy" style="color: #d78517"></i>
                         اندیکاتورهای نماد
                     </a></li>
                     <li><a href="#tab_null" data-toggle="tab">
+                        <i class="fa fa-dashboard" style="color: #dd1a68"></i>
                         Back Test
                     </a></li>
                 </ul>
@@ -847,16 +897,238 @@
                                                     margin-right: -61px;
                                                     margin-top: 130px;
                                                     width: 150px;
+                                                    border: solid;
+                                                    text-align: center;
+                                                    border-width: 1px;
+                                                    border-radius: 3px;
+                                                    color: gainsboro;
+                                                    z-index: 99999;
+
                                                 }
                                             </style>
 
-                                            <button class="button Psco_btn" style="margin-top: 77px;"><i
-                                                    class="fa fa-bar-chart-o"></i></button>
-                                            <button class="button Psco_btn" onclick="tbl_history_click()"><i
-                                                    class="fa fa-table"></i></button>
+                                            <div id="chr_tbl_history" class="button Psco_btn"
+                                                 style="margin-top: 77px;border-top-color: blueviolet; border-top-width:3px; "
+                                                 onclick="chr_history_click()"><i
+                                                    class="fa fa-bar-chart-o" style="color: #ff0000;"></i>
+                                            </div>
+                                            <div id="btn_tbl_history" class="button Psco_btn"
+                                                 onclick="tbl_history_click()"><i
+                                                    class="fa fa-table" style="color: #60c2ea"></i>
+                                            </div>
                                             <!--<button class="button Psco_btn">hi peyman </button>-->
                                         </div>
-                                        <div class="col-md-11" style="min-height: 330px;">
+                                        <div class="col-md-12"
+                                             style="min-height: 330px; margin-top: -238px;margin-right: 27px;z-index: 0;">
+
+                                            <div id="frm_chr_his" class="col-md-12">
+
+                                                <!--row1-->
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <div class="box">
+                                                            <!--<div class="box-header">-->
+                                                            <!---->
+                                                            <!--</div>-->
+                                                            <div class="box-body" style="min-height: 500px">
+                                                                <p style="font-weight: bold">
+                                                                    <b style="color: red; font-size: 3em; font-weight: bold">
+                                                                        ۱.
+                                                                    </b>
+                                                                    نوسانات قیمت
+                                                                </p>
+
+                                                                <p>
+
+                                                                <table class="table table-responsive table-striped table-hover text-center col-md-12 peyman"
+                                                                       style="text-align: right">
+                                                                    <thead>
+                                                                    <tr>
+                                                                        <td></td>
+                                                                        <td style="text-align: right">
+                                                                            روز
+                                                                        </td>
+                                                                    </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                    <tr>
+                                                                        <td style="text-align: right">
+                                                                            مثبت
+                                                                        </td>
+                                                                        <td id="Fluctuate_max"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="text-align: right">
+                                                                            منفی
+                                                                        </td>
+                                                                        <td id="Fluctuate_min"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="text-align: right">
+                                                                            بدون تغییر
+                                                                        </td>
+                                                                        <td id="Fluctuate_eq"></td>
+                                                                    </tr>
+                                                                    </tbody>
+                                                                </table>
+
+                                                                <div id="chart_chart_Fluctuate" style="height:200px;"
+                                                                     class="col-md-12"></div>
+
+                                                                </p>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-10">
+                                                        <div class="box">
+                                                            <!--<div class="box-header">-->
+                                                            <!---->
+                                                            <!--</div>-->
+                                                            <div class="box-body">
+                                                                <div id="chart_Fluctuate"
+                                                                     style="min-width: 310px; height: 500px; margin: 0 auto"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!--row 2-->
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <div class="box">
+                                                            <!--<div class="box-header">-->
+                                                            <!---->
+                                                            <!--</div>-->
+                                                            <div class="box-body" style="min-height: 500px">
+                                                                <p style="font-weight: bold">
+                                                                    <b style="color: red; font-size: 3em; font-weight: bold">
+                                                                        ۲.
+                                                                    </b>
+                                                                    مقایسه با شاخص کل
+                                                                </p>
+
+                                                                <p>
+
+                                                                <table class="table table-responsive table-striped table-hover text-center col-md-12 peyman"
+                                                                       style="text-align: right">
+                                                                    <thead>
+                                                                    <tr>
+                                                                        <td></td>
+                                                                        <td style="text-align: right">
+                                                                            روز
+                                                                        </td>
+                                                                    </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                    <tr>
+                                                                        <td style="text-align: right">
+                                                                            بالای شاخص
+                                                                        </td>
+                                                                        <td id="Fluctuate_max1"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="text-align: right">
+                                                                            پایین شاخص
+                                                                        </td>
+                                                                        <td id="Fluctuate_min1"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="text-align: right">
+                                                                            برابر شاخص
+                                                                        </td>
+                                                                        <td id="Fluctuate_eq1"></td>
+                                                                    </tr>
+                                                                    </tbody>
+                                                                </table>
+
+                                                                <div id="chart_chart_Fluctuate1" style="height:200px;"
+                                                                     class="col-md-12"></div>
+
+                                                                </p>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-10">
+                                                        <div class="box">
+                                                            <!--<div class="box-header">-->
+                                                            <!---->
+                                                            <!--</div>-->
+                                                            <div class="box-body">
+                                                                <div id="chart_Fluctuate1"
+                                                                     style="min-width: 310px; height: 500px; margin: 0 auto"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!--row 3 -->
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <div class="box">
+                                                            <!--<div class="box-header">-->
+                                                            <!---->
+                                                            <!--</div>-->
+                                                            <div class="box-body" style="min-height: 500px">
+                                                                <p style="font-weight: bold">
+                                                                    <b style="color: red; font-size: 3em; font-weight: bold">
+                                                                        ۳.
+                                                                    </b>
+                                                                    مقایسه سنواتی
+                                                                </p>
+
+                                                                <p>
+
+                                                                <table class="table table-responsive table-striped table-hover text-center col-md-12 peyman"
+                                                                       style="text-align: right">
+                                                                    <thead>
+                                                                    <tr>
+                                                                        <td></td>
+                                                                        <td style="text-align: right">
+                                                                            روز
+                                                                        </td>
+                                                                    </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                    <tr>
+                                                                        <td style="text-align: right">
+                                                                            هم جهت با قبل
+                                                                        </td>
+                                                                        <td id="Fluctuate_max2"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="text-align: right">
+                                                                            خلاف قبل
+                                                                        </td>
+                                                                        <td id="Fluctuate_min2"></td>
+                                                                    </tr>
+                                                                    </tbody>
+                                                                </table>
+
+                                                                <div id="chart_chart_Fluctuate2" style="height:200px;"
+                                                                     class="col-md-12"></div>
+
+                                                                </p>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-10">
+                                                        <div class="box">
+                                                            <!--<div class="box-header">-->
+                                                            <!---->
+                                                            <!--</div>-->
+                                                            <div class="box-body">
+                                                                <div id="chart_Fluctuate2"
+                                                                     style="min-width: 310px; height: 500px; margin: 0 auto"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
 
                                             <style type="text/css">
 
@@ -894,13 +1166,13 @@
                                                     font-weight: bold;
                                                 }
 
-                                                #tbl_min_max td{
+                                                #tbl_min_max td {
                                                     vertical-align: middle;
                                                 }
 
                                             </style>
-
-                                            <div id="frm_tbl_history" class="col-md-8" style="display: none;margin-right: -32px;">
+                                            <div id="frm_tbl_history" class="col-md-7"
+                                                 style="display: none;margin-right: -32px;">
                                                 <div class="col-md-12">
                                                     <div class="btn-group"
                                                          style="position: absolute;z-index: 10000;width: 25%;">
@@ -995,8 +1267,11 @@
                                                     </tfoot>
                                                 </table>
                                             </div>
-                                            <div id="frm_chr_history" class="col-md-4" style="display: none;padding-top: 18px;">
-                                                <table id="tbl_min_max" class="table table-responsive table-hover text-center col-md-12" style="vertical-align: middle; ">
+                                            <div id="frm_chr_history" class="col-md-5"
+                                                 style="display: none;padding-top: 18px;">
+                                                <table id="tbl_min_max"
+                                                       class="table table-responsive table-hover text-center col-md-12"
+                                                       style="vertical-align: middle; ">
                                                     <thead>
                                                     <tr>
                                                         <th colspan="2"></th>
@@ -1303,15 +1578,9 @@
                                             </span>
                                         </div>
                                         <div class="row  col-md-12">
-                                            <table class="table table-responsive table-striped table-hover">
+                                            <table id="tbl_msg_symbole"
+                                                   class="table table-responsive table-striped table-hover">
                                                 <thead>
-                                                <tr>
-                                                    <th colspan="3">
-                                                        <i class="fa fa-search"></i>
-                                                        <input type="text" placeholder="yyyy/mm/dd">
-                                                    </th>
-
-                                                </tr>
                                                 <tr>
                                                     <th class="col-md-1">
                                                         تاریخ
@@ -1323,35 +1592,8 @@
                                                         پیام
                                                     </th>
                                                 </tr>
-
                                                 </thead>
                                                 <tbody>
-                                                <tr>
-                                                    <td>1398/02/15</td>
-                                                    <td>16:00:23</td>
-                                                    <td>Hi man</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1398/02/15</td>
-                                                    <td>16:00:23</td>
-                                                    <td>Hi man</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1398/02/15</td>
-                                                    <td>16:00:23</td>
-                                                    <td>Hi man</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1398/02/15</td>
-                                                    <td>16:00:23</td>
-                                                    <td>Hi man</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1398/02/15</td>
-                                                    <td>16:00:23</td>
-                                                    <td>Hi man</td>
-                                                </tr>
-
                                                 </tbody>
                                                 <tfoot>
 
