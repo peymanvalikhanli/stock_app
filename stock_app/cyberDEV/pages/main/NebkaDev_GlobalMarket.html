@@ -1,0 +1,51 @@
+<psco_head>
+
+    $(function () {
+    $('#tbl_global_market').DataTable({
+    'lengthChange': false,
+    // 'bPaginate': false,
+    'ordering' : true,
+    'info' : false,
+    'fixedHeader': true,
+    'scrollX': true,
+    'scrollY': '54vh',
+    'scrollCollapse': true,
+    'paging': false,
+    //'min-height': '100px';
+    })
+
+    })
+    var tgju = document.createElement('script');
+    tgju.setAttribute("src","http://www.tgju.org/webservice/global/snippet-loader.php?token=webservice&items=ons,mesghal,geram18,geram24,sekeb,sekee,nim,rob,gerami,platinum,palladium,silver,oil,oil_brent,oil_opec,bourse,price_dollar_rl,price_eur,price_aed,price_gbp,price_sek,price_dkk,price_jpy,price_myr,price_kwd,price_syp,price_rub,price_omr,price_sgd,price_iqd,price_afn,price_azn,price_aud,price_cad,price_cny,price_chf,price_nok,price_try,price_hkd,price_sar,price_inr,price_pkr,price_bhd,price_qar,price_nzd,price_thb,price_amd,price_gel,bank_usd,bank_eur,bank_aed,bank_gbp,bank_sek,bank_dkk,bank_jpy,bank_myr,bank_kwd,bank_syp,bank_rub,bank_omr,bank_sgd,bank_iqd,bank_afn,bank_azn,bank_aud,bank_cad,bank_cny,bank_chf,bank_nok,bank_try,bank_hkd,bank_sar,bank_inr,bank_pkr,bank_bhd,bank_qar,bank_nzd,bank_thb,bank_amd,bank_gel,sana_buy_usd,sana_buy_eur,sana_buy_aed,sana_sell_usd,sana_sell_eur,sana_sell_aed,transfer_usd,transfer_eur,transfer_aed&opts=diff,low,high,time&placeholder=tgju-data");
+    document.head.appendChild(tgju);
+    setInterval(function(){
+    a = document.getElementsByClassName("tgju-copyright");
+    a[0].innerText= "";
+    }, 1000);
+
+    setTimeout(function(){
+    b = document.getElementsByClassName("data-table");
+    b[0].setAttribute("class","table table-responsive table-striped table-hover text-center col-md-12");
+
+    }, 1000);
+
+</psco_head>
+<psco_body>
+    <div class="row">
+        <div class="box">
+            <!--<div class="box-header">-->
+
+            <!--</div>-->
+            <!-- /.box-header -->
+            <div class="box-body">
+                <h2>
+بازار قیمت ها
+                </h2>
+            <br>
+                <div id="tgju-data"></div>
+            </div>
+
+        </div>
+    </div>
+
+</psco_body>

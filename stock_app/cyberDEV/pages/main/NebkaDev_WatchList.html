@@ -62,26 +62,26 @@
     // peyman tbl
 
     function update_tblb(){
-    var insCode = "13235547361447092";
+        var insCode = "13235547361447092";
 
-    BestLimitsAllIns_connection.insCode = insCode ;
+        BestLimitsAllIns_connection.insCode = insCode ;
 
-    BestLimitsAllIns_connection.get(2);
+        BestLimitsAllIns_connection.get(2);
 
-    ClientType_connection.insCode = insCode ;
-    ClientType_connection.get()
+        ClientType_connection.insCode = insCode ;
+        ClientType_connection.get()
     }
 
     Instrument_connection.init_table();
 
     function update_data(){
 
-    Instrument_connection.tbl_TradeLastDay.clear();
-    Instrument_connection.get();
+        Instrument_connection.tbl_TradeLastDay.clear();
+        Instrument_connection.get();
     }
 
 
-    setInterval(function(){Instrument_connection.get_update();}, 5000);
+    // setInterval(function(){update_data();}, 2000);
     update_data();
 
     //update_tblb();
@@ -337,17 +337,13 @@
             <!-- Custom Tabs -->
             <div class="nav-tabs-custom" style="min-height: 250px;">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a href="#tab_symbol" data-toggle="tab" onclick="Instrument_connection.tab_symbole_info_onclick();">
-                        <i class="fa fa-object-group" style="color: #22d717" ></i>
+                    <li class="active"><a href="#tab_symbol" data-toggle="tab">
+                        <i class="fa fa-object-group" style="color: #22d717"></i>
                         اطلاعات نماد
                     </a></li>
-                    <li><a href="#tab_history" data-toggle="tab" onclick="Trade_connection.tab_history_onClick()">
+                    <li><a href="#tab_history" data-toggle="tab">
                         <i class="fa fa-history" style="color: #129bd3"></i>
-                        سابقه
-                    </a></li>
-                    <li><a href="#tab_history_chart" data-toggle="tab" onclick="Trade_connection.tab_history_onClick()">
-                        <i class="fa fa-area-chart" style="color: #129bd3"></i>
-                        نمودار
+                        سابقه معاملات
                     </a></li>
                     <li><a href="#tab_Coefficients" data-toggle="tab">
                         <i class="fa fa-tasks" style="color: #ee1010"></i>
@@ -378,7 +374,7 @@
                         هشدار
                     </a></li>
                     <li><a href="#tab_note" data-toggle="tab">
-                        <i class="fa fa-comment" style="color: #413053"></i>
+                        <i class="fa fa-comment" style="color: #4130534"></i>
                         یادداشت
                     </a></li>
                     <li><a href="#tab_indicators" data-toggle="tab">
@@ -881,279 +877,36 @@
                                                  <span class="Nebka_symbole_dec"> </span>
                                             </span>
                                         </div>
-                                        <div class="col-md-12" style="">
-
+                                        <div style="float: right;width: 35px;display: flex;flex-direction: column;">
                                             <style type="text/css">
-
-                                                ::-webkit-scrollbar {
-                                                    width: 0px;
-                                                    background: transparent; /* make scrollbar transparent */
-                                                }
-
-                                                #searchinput_h {
-                                                    width: 100%;
-                                                    /*padding-right: 25px;*/
-                                                    padding-left: 20px;
-                                                }
-
-                                                #tbl_h_searchclear {
-                                                    position: absolute;
-                                                    left: 5px;
-                                                    top: 0;
-                                                    bottom: 0;
-                                                    height: 14px;
-                                                    margin: auto;
-                                                    font-size: 14px;
-                                                    cursor: pointer;
-                                                    color: #FF0000;
-                                                    display: none;
-                                                }
-
-                                                #tbl_history {
-                                                    font-size: 12px;
-                                                }
-
-                                                .P_text_ver {
+                                                .Psco_btn {
                                                     transform: rotate(90deg);
-                                                    /*margin-top: 40%;*/
-                                                    font-weight: bold;
-                                                }
+                                                    margin-right: -61px;
+                                                    margin-top: 130px;
+                                                    width: 150px;
+                                                    border: solid;
+                                                    text-align: center;
+                                                    border-width: 1px;
+                                                    border-radius: 3px;
+                                                    color: gainsboro;
+                                                    z-index: 99999;
 
-                                                #tbl_min_max td {
-                                                    vertical-align: middle;
                                                 }
-
                                             </style>
-                                            <div id="frm_tbl_history" class="col-md-7" style="margin-right: -32px;">
-                                                <div class="col-md-12">
-                                                    <div class="btn-group"
-                                                         style="position: absolute;z-index: 10000;width: 25%;">
-                                                        <span id="tbl_h_searchclear" class="fa fa-remove"></span>
-                                                        <input id="searchinput_h" type="search" class="form-control"
-                                                               onkeyup="Instrument_connection.search_tbl()"
-                                                               placeholder="جست و جو تاریخ">
-                                                        <span id="tbl_searchicon_h" class="fa fa-search p_btn"></span>
-                                                    </div>
-                                                    <div style="position: absolute;left: 0;z-index: 1000;background: white;width: 100%;direction: ltr;padding-left: 4%;">
-                                                        <a id="#btn_copy_h" onclick="btn_copy()"
-                                                           class="btn btn-social-icon btn-vk" data-toggle="tooltip"
-                                                           title="کپی"><i class="fa fa-clipboard"></i></a>
-                                                        <a id="#btn_excel_h" onclick="btn_excel()"
-                                                           class="btn btn-social-icon btn-success"
-                                                           data-toggle="tooltip" title="اکسل"><i
-                                                                class="fa fa-file-excel-o"></i></a>
-                                                    </div>
-                                                </div>
-                                                <table id="tbl_history"
-                                                       class="table table-responsive table-striped table-hover text-center col-md-12 peyman">
-                                                    <thead>
-                                                    <tr>
-                                                        <th rowspan="2">
-                                                            تاریخ
-                                                        </th>
-                                                        <th rowspan="2">
-                                                            تعداد
-                                                        </th>
-                                                        <th rowspan="2">
-                                                            حجم
-                                                        </th>
-                                                        <th rowspan="2">
-                                                            ارزش
-                                                        </th>
-                                                        <!--<th rowspan="2">-->
-                                                        <th rowspan="2">
-                                                            قیمت دیروز
-                                                        </th>
-                                                        <!--<th rowspan="2">-->
-                                                        <th rowspan="2">
-                                                            اولین قیمت
-                                                        </th>
-                                                        <!--<th rowspan="2">-->
-                                                        <th rowspan="2">
-                                                            کمترین قیمت
-                                                        </th>
-                                                        <!--<th rowspan="2">-->
-                                                        <th rowspan="2">
-                                                            بیشترین قیمت
-                                                        </th>
-                                                        <th colspan="3">
-                                                            آخرین معامله
-                                                        </th>
 
-                                                        <th colspan="3">
-                                                            قیمت پایانی
-                                                        </th>
-                                                        <th rowspan="2">
-                                                            QTotCap
-                                                        </th>
-                                                        <th rowspan="2">
-                                                            QTotTran5J
-                                                        </th>
-                                                    </tr>
-                                                    <tr>
-
-                                                        <th>
-                                                            قیمت
-                                                        </th>
-                                                        <th>
-                                                            تغییر
-                                                        </th>
-                                                        <th>
-                                                            درصد
-                                                        </th>
-                                                        <th>
-                                                            قیمت
-                                                        </th>
-                                                        <th>
-                                                            تغییر
-                                                        </th>
-                                                        <th>
-                                                            درصد
-                                                        </th>
-                                                    </tr>
-
-                                                    </thead>
-                                                    <tbody>
-                                                    </tbody>
-                                                    <tfoot>
-                                                    </tfoot>
-                                                </table>
+                                            <div id="chr_tbl_history" class="button Psco_btn"
+                                                 style="margin-top: 77px;border-top-color: blueviolet; border-top-width:3px; "
+                                                 onclick="chr_history_click()"><i
+                                                    class="fa fa-bar-chart-o" style="color: #ff0000;"></i>
                                             </div>
-                                            <div id="frm_chr_history" class="col-md-5"
-                                                 style="padding-top: 18px;">
-                                                <table id="tbl_min_max"
-                                                       class="table table-responsive table-hover text-center col-md-12"
-                                                       style="vertical-align: middle; ">
-                                                    <thead>
-                                                    <tr>
-                                                        <th colspan="2"></th>
-                                                        <th>
-                                                            <div class="">
-                                                                متعادل
-                                                            </div>
-                                                        </th>
-                                                        <th>
-                                                            <div class="">
-                                                                صف خرید
-                                                            </div>
-                                                        </th>
-                                                        <th>
-                                                            <div class="">
-                                                                صف فروش
-                                                            </div>
-                                                        </th>
-                                                        <th>
-                                                            <div class="">
-                                                                متوقف
-                                                            </div>
-                                                        </th>
-                                                        <th></th>
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="P_text_ver">
-                                                                یکماهه
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            روز
-                                                        </td>
-                                                        <td id="cell_mon_all">2</td>
-                                                        <td id="cell_mon_sell">3</td>
-                                                        <td id="cell_mon_bay">4</td>
-                                                        <td id="cell_mon_stop"></td>
-                                                        <td>
-                                                            <div id="chart_1" style="height:200px;width: 200px"></div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="P_text_ver">
-                                                                سه ماهه
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            روز
-                                                        </td>
-                                                        <td id="cell_3mon_all"></td>
-                                                        <td id="cell_3mon_sell"></td>
-                                                        <td id="cell_3mon_bay"></td>
-                                                        <td id="cell_3mon_stop"></td>
-                                                        <td>
-                                                            <div id="chart_2" style="height:200px;width: 200px"></div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="P_text_ver">
-                                                                ششماهه
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            روز
-                                                        </td>
-                                                        <td id="cell_6mon_all"></td>
-                                                        <td id="cell_6mon_sell"></td>
-                                                        <td id="cell_6mon_bay"></td>
-                                                        <td id="cell_6mon_stop"></td>
-                                                        <td>
-                                                            <div id="chart_3" style="height:200px;width: 200px"></div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="P_text_ver">
-                                                                یکساله
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            روز
-                                                        </td>
-                                                        <td id="cell_y_all"></td>
-                                                        <td id="cell_y_sell"></td>
-                                                        <td id="cell_y_bay"></td>
-                                                        <td id="cell_y_stop"></td>
-                                                        <td>
-                                                            <div id="chart_4" style="height:200px;width: 200px"></div>
-                                                        </td>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
+                                            <div id="btn_tbl_history" class="button Psco_btn"
+                                                 onclick="tbl_history_click()"><i
+                                                    class="fa fa-table" style="color: #60c2ea"></i>
                                             </div>
+                                            <!--<button class="button Psco_btn">hi peyman </button>-->
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.tab-pane -->
-                    <!--tab history -->
-                    <!--TODO: history-->
-                    <div class="tab-pane" id="tab_history_chart">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="box">
-                                    <!--<div class="box-header">-->
-                                    <!---->
-                                    <!--</div>-->
-                                    <div class="box-body">
-                                        <div class="row  col-md-12">
-                                            <span class="col-md-4">
-                                                <b>
-                                                    نماد:
-                                                </b>
-                                                <span class="Nebka_symbole_name"> </span>
-                                            </span>
-                                            <span class="col-md-8">
-                                                <b>
-                                                    شرح:
-                                                </b>
-                                                 <span class="Nebka_symbole_dec"> </span>
-                                            </span>
-                                        </div>
-                                        <div class="col-md-12" style="">
+                                        <div class="col-md-12"
+                                             style="min-height: 330px; margin-top: -238px;margin-right: 27px;z-index: 0;">
 
                                             <div id="frm_chr_his" class="col-md-12">
 
@@ -1364,6 +1117,246 @@
 
                                             </div>
 
+                                            <style type="text/css">
+
+                                                ::-webkit-scrollbar {
+                                                    width: 0px;
+                                                    background: transparent; /* make scrollbar transparent */
+                                                }
+
+                                                #searchinput_h {
+                                                    width: 100%;
+                                                    /*padding-right: 25px;*/
+                                                    padding-left: 20px;
+                                                }
+
+                                                #tbl_h_searchclear {
+                                                    position: absolute;
+                                                    left: 5px;
+                                                    top: 0;
+                                                    bottom: 0;
+                                                    height: 14px;
+                                                    margin: auto;
+                                                    font-size: 14px;
+                                                    cursor: pointer;
+                                                    color: #FF0000;
+                                                    display: none;
+                                                }
+
+                                                #tbl_history {
+                                                    font-size: 12px;
+                                                }
+
+                                                .P_text_ver {
+                                                    transform: rotate(90deg);
+                                                    /*margin-top: 40%;*/
+                                                    font-weight: bold;
+                                                }
+
+                                                #tbl_min_max td {
+                                                    vertical-align: middle;
+                                                }
+
+                                            </style>
+                                            <div id="frm_tbl_history" class="col-md-7"
+                                                 style="display: none;margin-right: -32px;">
+                                                <div class="col-md-12">
+                                                    <div class="btn-group"
+                                                         style="position: absolute;z-index: 10000;width: 25%;">
+                                                        <span id="tbl_h_searchclear" class="fa fa-remove"></span>
+                                                        <input id="searchinput_h" type="search" class="form-control"
+                                                               onkeyup="Instrument_connection.search_tbl()"
+                                                               placeholder="جست و جو تاریخ">
+                                                        <span id="tbl_searchicon_h" class="fa fa-search p_btn"></span>
+                                                    </div>
+                                                    <div style="position: absolute;left: 0;z-index: 1000;background: white;width: 100%;direction: ltr;padding-left: 4%;">
+                                                        <a id="#btn_copy_h" onclick="btn_copy()"
+                                                           class="btn btn-social-icon btn-vk" data-toggle="tooltip"
+                                                           title="کپی"><i class="fa fa-clipboard"></i></a>
+                                                        <a id="#btn_excel_h" onclick="btn_excel()"
+                                                           class="btn btn-social-icon btn-success"
+                                                           data-toggle="tooltip" title="اکسل"><i
+                                                                class="fa fa-file-excel-o"></i></a>
+                                                    </div>
+                                                </div>
+                                                <table id="tbl_history"
+                                                       class="table table-responsive table-striped table-hover text-center col-md-12 peyman">
+                                                    <thead>
+                                                    <tr>
+                                                        <th rowspan="2">
+                                                            تاریخ
+                                                        </th>
+                                                        <th rowspan="2">
+                                                            تعداد
+                                                        </th>
+                                                        <th rowspan="2">
+                                                            حجم
+                                                        </th>
+                                                        <th rowspan="2">
+                                                            ارزش
+                                                        </th>
+                                                        <!--<th rowspan="2">-->
+                                                        <th rowspan="2">
+                                                            قیمت دیروز
+                                                        </th>
+                                                        <!--<th rowspan="2">-->
+                                                        <th rowspan="2">
+                                                            اولین قیمت
+                                                        </th>
+                                                        <!--<th rowspan="2">-->
+                                                        <th rowspan="2">
+                                                            کمترین قیمت
+                                                        </th>
+                                                        <!--<th rowspan="2">-->
+                                                        <th rowspan="2">
+                                                            بیشترین قیمت
+                                                        </th>
+                                                        <th colspan="3">
+                                                            آخرین معامله
+                                                        </th>
+
+                                                        <th colspan="3">
+                                                            قیمت پایانی
+                                                        </th>
+                                                        <th rowspan="2">
+                                                            QTotCap
+                                                        </th>
+                                                        <th rowspan="2">
+                                                            QTotTran5J
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+
+                                                        <th>
+                                                            قیمت
+                                                        </th>
+                                                        <th>
+                                                            تغییر
+                                                        </th>
+                                                        <th>
+                                                            درصد
+                                                        </th>
+                                                        <th>
+                                                            قیمت
+                                                        </th>
+                                                        <th>
+                                                            تغییر
+                                                        </th>
+                                                        <th>
+                                                            درصد
+                                                        </th>
+                                                    </tr>
+
+                                                    </thead>
+                                                    <tbody>
+                                                    </tbody>
+                                                    <tfoot>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                            <div id="frm_chr_history" class="col-md-5"
+                                                 style="display: none;padding-top: 18px;">
+                                                <table id="tbl_min_max"
+                                                       class="table table-responsive table-hover text-center col-md-12"
+                                                       style="vertical-align: middle; ">
+                                                    <thead>
+                                                    <tr>
+                                                        <th colspan="2"></th>
+                                                        <th>
+                                                            <div class="">
+                                                                متعادل
+                                                            </div>
+                                                        </th>
+                                                        <th>
+                                                            <div class="">
+                                                                صف خرید
+                                                            </div>
+                                                        </th>
+                                                        <th>
+                                                            <div class="">
+                                                                صف فروش
+                                                            </div>
+                                                        </th>
+                                                        <th>
+                                                            <div class="">
+                                                                متوقف
+                                                            </div>
+                                                        </th>
+                                                        <th></th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="P_text_ver">
+                                                                یکماهه
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            روز
+                                                        </td>
+                                                        <td id="cell_mon_all">2</td>
+                                                        <td id="cell_mon_sell">3</td>
+                                                        <td id="cell_mon_bay">4</td>
+                                                        <td id="cell_mon_stop"></td>
+                                                        <td>
+                                                            <div id="chart_1" style="height:200px;width: 200px"></div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="P_text_ver">
+                                                                سه ماهه
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            روز
+                                                        </td>
+                                                        <td id="cell_3mon_all"></td>
+                                                        <td id="cell_3mon_sell"></td>
+                                                        <td id="cell_3mon_bay"></td>
+                                                        <td id="cell_3mon_stop"></td>
+                                                        <td>
+                                                            <div id="chart_2" style="height:200px;width: 200px"></div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="P_text_ver">
+                                                                ششماهه
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            روز
+                                                        </td>
+                                                        <td id="cell_6mon_all"></td>
+                                                        <td id="cell_6mon_sell"></td>
+                                                        <td id="cell_6mon_bay"></td>
+                                                        <td id="cell_6mon_stop"></td>
+                                                        <td>
+                                                            <div id="chart_3" style="height:200px;width: 200px"></div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="P_text_ver">
+                                                                یکساله
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            روز
+                                                        </td>
+                                                        <td id="cell_y_all"></td>
+                                                        <td id="cell_y_sell"></td>
+                                                        <td id="cell_y_bay"></td>
+                                                        <td id="cell_y_stop"></td>
+                                                        <td>
+                                                            <div id="chart_4" style="height:200px;width: 200px"></div>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
