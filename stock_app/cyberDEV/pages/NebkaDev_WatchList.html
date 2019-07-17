@@ -146,11 +146,34 @@
 
     TseMsg_connection.ini_tbl_symbole();
 
+    function btn_toggel_wl_onclick(){
+        var wl = document.getElementById("frm-watch_list");
+        var tv = document.getElementById("frm-tv-chart");
+        var icon = document.getElementById("icon_toggle_w");
+        if(wl.className != "peyman-col-0" ){
+            wl.setAttribute("class","peyman-col-0");
+            //wl.style.display="none";
+            tv.setAttribute("class","col-md-12");
+            tv.style.marginRight="1%";
+            icon.setAttribute("class","fa fa-chevron-left");
+            setTimeout(function(){
+                var wl = document.getElementById("frm-watch_list");
+                wl.style.display="none";
+            }, 1000);
+        }else{
+            wl.setAttribute("class","col-md-3");
+            wl.style.display="block";
+            tv.setAttribute("class","col-md-9");
+            tv.style.marginRight="0";
+            icon.setAttribute("class","fa fa-chevron-right");
+        }
+    }
+
 </psco_head>
 <psco_body>
     <div id="tooltip"></div>
     <div class="row" class="col-xs-12">
-        <div class="col-xs-3">
+        <div class="col-xs-3" id="frm-watch_list" style="-webkit-transition: all 2s; /* Safari prior 6.1 */transition: all 2s;">
             <!--style="    margin-right: -1%; margin-left: -2.5%;">-->
             <div class="box">
                 <!--<div class="box-header">-->
@@ -239,7 +262,23 @@
                         .peyman tr td {
                             font-size: 12px;
                         }
+
+                        .peyman_toggle_btn {
+                            width: 20px;
+                            height: 100px;
+                            position: absolute;
+                            /*background: rebeccapurple;*/
+                            right: -10px;
+                            top: 50%;
+                            cursor: pointer;
+                        }
+
+                        .peyman-col-0{
+                            width: 0px;
+                        }
+
                     </style>
+
                     <div class="btn-group" style="position: absolute;z-index: 10000;width: 44%;">
                         <span id="tbl_searchclear" class="fa fa-remove"></span>
                         <input id="searchinput" type="search" class="form-control"
@@ -311,13 +350,16 @@
             <!-- /.box -->
         </div>
 
-        <div class="col-xs-9" style="    margin: 0;padding: 0;padding-left: 1%;">
+        <div id="frm-tv-chart" class="col-xs-9" style="margin: 0;padding: 0;padding-left: 1%;">
             <!--style="margin-right: -4%; margin-left: -2.5%;">-->
             <div class="box">
                 <!--<div class="box-header">-->
                 <!--</div>-->
                 <!--&lt;!&ndash; /.box-header &ndash;&gt;-->
                 <div class="box-body">
+                    <div class="peyman_toggle_btn" onclick="btn_toggel_wl_onclick()">
+                        <i id="icon_toggle_w" class="fa fa-chevron-right"></i>
+                    </div>
                     <!-- TradingView Widget BEGIN -->
                     <div class="tradingview-widget-container" style="min-height: 80.5vh; overflow: hidden;">
                         <iframe id="tv_chart" style="width: 100%; height: 80.2vh; border:none; overflow: visible;"
